@@ -52,15 +52,25 @@ router.post('/login', (req, res, next) => {
   });
 
 //LOGOUT//
-router.post("/logout", (req,res) => {
-  req.session.destroy();
-  res.render("index");
+
+router.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.render('logout.hbs')
+  });
 })
 
+/*
+router.post("/logout", (req,res) => {
+  req.session.destroy();
+  res.render('logout.hbs')
+  res.redirect("/logout");
+})
+*/
 
 
 router.get("profile-user", (req, res, next) => {
   res.render("profileuser", {userInSession: req.session.currentUser})
 })
+
 
 module.exports = router;

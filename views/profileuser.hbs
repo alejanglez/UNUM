@@ -1,3 +1,7 @@
+<section id="header-image">
+  <img src='/images/headers/header_home1.png'>
+</section>
+
 {{#if errorMessage}}
 <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
 {{/if}}
@@ -7,8 +11,12 @@
    <ul class="nav nav-pills nav-justified">
   <li role="presentation"><a href="/jobslist">Jobs</a></li>
   <li role="presentation"><a href="#">Create Job</a></li>
-  <li role="presentation"><a href="/edit">Edit profile</a></li>
-  <li role="presentation"><a href="#">Log out</a></li>
+  <li role="presentation"><a href="/edit">Edit details</a></li>
+  <!--<li role="presentation"><a href="/logout">Logout</a></li>-->
+  <form id="logout-form" action="/logout" method="POST">
+    <button>Logout</button>
+  </form>
+
 </ul>
   </div>
 </nav>
