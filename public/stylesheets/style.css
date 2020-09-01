@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #299088;
 }
 
@@ -8,12 +8,17 @@ a {
   color: #00b7ff;
 }
 
-.card img{
+.card img {
   height: 200px;
   object-fit: cover;
 }
 
 .card {
   background: none;
-  
+}
+.panel-title {
+  color: white;
+}
+.nav-bar-link {
+  color: white;
 }

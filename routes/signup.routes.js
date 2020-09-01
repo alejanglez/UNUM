@@ -113,6 +113,7 @@ router.post("/signup", (req, res, next) => {
             ))}
           )
           Promise.all(skillsarray).then(() => {
+            console.log(req.session.currentUser);
             res.render('profileuser')
           });
         } else {
@@ -160,7 +161,9 @@ router.post("/signup", (req, res, next) => {
             additionalInformation: additionalInfoJob, 
             jobowner: newUser._id,
             jobstatus: "current",
-          }).then(() => res.render('profileuser'))
+          }).then(() => {
+            console.log(req.session.currentUser);
+            res.render('profileuser')})
             .catch((err) => {
               console.log("JOB ERROR", err);
               next(err);
