@@ -28,13 +28,12 @@ router.get("/jobdetails/:id", (req, res, next) => {
         console.log(jobdetailsFromDB.jobowner);
       User.findOne({_id:jobdetailsFromDB.jobowner}).then((foundUser) => {
         console.log(foundUser)
-        const { selectDescription, image, additionalInformation, jobstatus } = jobdetailsFromDB;
-        console.log(selectDescription, image, additionalInformation, jobstatus);
+        const { selectDescription, additionalInformation, jobstatus } = jobdetailsFromDB;
+        console.log(selectDescription, additionalInformation, jobstatus);
         const { name, address } = foundUser;
         console.log(name, address);
         const infoForJobCard = {
             selectDescription,
-            image,
             additionalInformation,
             jobstatus,
             name,
