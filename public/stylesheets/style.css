@@ -21,6 +21,7 @@ a {
 
 .card {
   background: none;
+  border: lightgray;
 }
 .panel-title {
   color: white;
@@ -30,6 +31,8 @@ a {
 }
 
 .unum-logo {
-  max-width: 100%;
+  max-width: 50%;
   display: flex;
+  justify-content: center;
+  background-color: pink;
 }
