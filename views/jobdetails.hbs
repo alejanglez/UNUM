@@ -4,12 +4,15 @@
   <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
   {{/if}}
   <div class="row">
-    {{> extendedJobCard this}}
+    {{> extendedJobCard }}
   </div>
   <div class="row">
     <h5>Job Owner Details</h5>
+    <hr>
     <p>Name:{{this.name}}</p>
+    <hr>
     <p>Address:{{this.address}}</p>
+    <hr>
     <p>The job owner's contact details will be shared with you if you accept this job.</p>
   </div>
   <button type="button" class="btn btn-warning"><a href="/profile-user/acceptjob">Accept Job</a></button>

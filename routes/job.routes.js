@@ -21,11 +21,13 @@ router.get("/jobslist", (req, res, next) => {
 });
 
 router.get("/jobdetails/:id", (req, res, next) => {
-  const { searchId } = req.params.id;
-  Job.findOne({ id: searchId })
+  const  searchId  = req.params.id;
+  console.log(searchId);
+  Job.findOne({ _id: searchId })
     .then((jobdetailsFromDB) => {
-        console.log(jobdetailsFromDB);
-      User.findOne({ id: jobdetailsFromDB._id }).then((foundUser) => {
+        console.log(jobdetailsFromDB.jobowner);
+      User.findOne({_id:jobdetailsFromDB.jobowner}).then((foundUser) => {
+        console.log(foundUser)
         const { selectDescription, image, additionalInformation, jobstatus } = jobdetailsFromDB;
         console.log(selectDescription, image, additionalInformation, jobstatus);
         const { name, address } = foundUser;
@@ -39,7 +41,7 @@ router.get("/jobdetails/:id", (req, res, next) => {
             address
         };
         console.log(infoForJobCard);
-        res.render("jobdetails", { infoForJobCard });
+        res.render("jobdetails",  infoForJobCard );
       });
     })
     .catch((error) =>

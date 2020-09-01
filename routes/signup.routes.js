@@ -117,7 +117,6 @@ router.post("/signup", (req, res, next) => {
             res.render('profileuser')
           });
         } else {
-          User.findByIdAndUpdate(newUser._id, {$addToSet: {jobs: jobDescription},}).then(() =>{
           switch(jobDescription){
             case 'Painting and decorating':
               icon = 'images/icons/paintinganddecorating.png';
@@ -161,16 +160,24 @@ router.post("/signup", (req, res, next) => {
             additionalInformation: additionalInfoJob, 
             jobowner: newUser._id,
             jobstatus: "current",
-          }).then(() => {
-            console.log(req.session.currentUser);
-            res.render('profileuser')})
+          })
+          .then((newJob) => {
+            console.log(newJob._id);
+            User.findByIdAndUpdate(newUser._id, {$addToSet: {jobs: newJob._id},
+            })
+            .then((updatedUser) =>{ 
+            console.log(updatedUser);
+            res.render('profileuser')
+          })
+          .catch(err => console.log("USER UPDATE ERROR", err))
+        })
             .catch((err) => {
               console.log("JOB ERROR", err);
               next(err);
             })
-          })}
-        })
+        }
       })
+    })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
         res.status(500).render("signup", { errorMessage: error.message });

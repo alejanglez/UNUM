@@ -69,7 +69,7 @@ router.post("/logout", (req,res) => {
 
 
 router.get("/profile-user", (req, res, next) => {
-  console.log(req.session.currentUser);
+  console.log(req.session);
   res.render("profileuser", {userInSession: req.session.currentUser})
 })
 

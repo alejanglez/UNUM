@@ -40,10 +40,10 @@ const userSchema = new Schema({
     type:String
   },
   skills: {
-    type:[String]
+    type:[{type:Schema.Types.ObjectId, ref:"Skill"}]
   },
   jobs: {
-    type:[String]
+    type:[{type:Schema.Types.ObjectId, ref:"Job"}]
   },
   signupagreement: {
     type:String,
