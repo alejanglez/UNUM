@@ -114,7 +114,7 @@ router.post("/signup", (req, res, next) => {
           )
           Promise.all(skillsarray).then(() => {
             console.log(req.session.currentUser);
-            res.render('profileuser')
+            res.render('profileuser', req.session.currentUser)
           });
         } else {
           switch(jobDescription){
@@ -159,7 +159,7 @@ router.post("/signup", (req, res, next) => {
             image: icon,
             additionalInformation: additionalInfoJob, 
             jobowner: newUser._id,
-            jobstatus: "current",
+            jobstatus: "current"
           })
           .then((newJob) => {
             console.log(newJob._id);
@@ -167,7 +167,7 @@ router.post("/signup", (req, res, next) => {
             })
             .then((updatedUser) =>{ 
             console.log(updatedUser);
-            res.render('profileuser')
+            res.render('profileuser', req.session.currentUser)
           })
           .catch(err => console.log("USER UPDATE ERROR", err))
         })

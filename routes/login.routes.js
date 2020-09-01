@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const User = require('../models/User.model');
+const Job = require('../models/Job.model');
+const Skill = require('../models/Skill.model');
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require('mongoose');
@@ -69,9 +71,54 @@ router.post("/logout", (req,res) => {
 
 
 router.get("/profile-user", (req, res, next) => {
-  console.log(req.session);
-  res.render("profileuser", {userInSession: req.session.currentUser})
+  console.log(req.session.currentUser);
+  const currentUser = req.session.currentUser;
+  const {name, email, telephone, address, jobowner, skillprovider} = currentUser;
+  const jobId = currentUser.jobs[0];
+  Job.findOne({ _id: jobId })
+    .then((jobdetailsFromDB) => {
+      const { selectDescription, additionalInformation, jobowner, jobstatus, allocation } = jobdetailsFromDB;
+      console.log(selectDescription, additionalInformation, jobowner, jobstatus, allocation);
+      User.findOne({_id:jobdetailsFromDB.jobowner}).then((foundJobOwner) => {
+      const { name:jobOwnerName, email:jobOwnerEmail, telephone:jobOwnerTelephone } = foundJobOwner;
+      if(allocation){
+      User.findOne({_id:jobdetailsFromDB.allocation}).then((foundSkillProvider) => {
+      const { name:skillProviderName } = foundSkillProvider;
+      const infoForProfilePage = {
+        name,
+        email,
+        telephone,
+        address,
+        selectDescription,
+        additionalInformation,
+        skillProviderName,
+        jobOwnerName,
+        jobOwnerEmail,
+        jobOwnerTelephone,
+        jobstatus
+    };
+  });
+ } else {
+      const infoForProfilePage = {
+        name,
+        email,
+        telephone,
+        address,
+        selectDescription,
+        additionalInformation,
+        skillProviderName:"Not yet assigned",
+        jobOwnerName,
+        jobOwnerEmail,
+        jobOwnerTelephone,
+        jobstatus
+    }
+    res.render("profileuser", infoForProfilePage);
+      }
 })
+    
+    .catch(error => next(error));
+    })
+  })
 
 
 module.exports = router;
