@@ -119,28 +119,28 @@ router.post("/signup", (req, res, next) => {
         } else {
           switch(jobDescription){
             case 'Painting and decorating':
-              icon = 'images/icons/paintinganddecorating.png';
+              icon = 'images/icons/paintinganddecorating.jpg';
               break;
             case 'Babysitting':
-              icon = 'images/icons/babysitting.png';
+              icon = 'images/icons/babysitting.jpg';
               break;
             case 'Cooking':
-              icon = 'images/icons/cooking.png';
+              icon = 'images/icons/cooking.jpg';
               break;
             case 'Web development':
               icon = 'images/icons/web development.png';
               break;
             case 'Cleaning':
-              icon = 'images/icons/cleaning.png';
+              icon = 'images/icons/cleaning.jpg';
               break;
             case 'Woodwork and general repairs':
-              icon = 'images/icons/carpenter.png';
+              icon = 'images/icons/carpenter.jpg';
               break;
             case 'Gardening':
-              icon = 'images/icons/gardening.png';
+              icon = 'images/icons/gardening.jpg';
               break;
             case 'Ironing':
-              icon = 'images/icons/ironing.png';
+              icon = 'images/icons/ironing.jpg';
               break;
             case 'Homework help and tutoring':
               icon = 'images/icons/homework.png';
@@ -149,7 +149,7 @@ router.post("/signup", (req, res, next) => {
               icon = 'images/icons/hairdresser.png';
               break;
             case 'Car washing (inside and out)':
-              icon = 'images/icons/carwashing.png';
+              icon = 'images/icons/carwashing.jpg';
               break;
             default:
               icon = 'image not found';
