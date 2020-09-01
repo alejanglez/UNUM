@@ -4,12 +4,18 @@ body {
   background-color: #299088;
 }
 
+h1 {
+  font-size: 10vw;
+  color: lightgray;
+}
+
 a {
   color: #00b7ff;
 }
 
 .card img {
-  height: 200px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -21,4 +27,9 @@ a {
 }
 .nav-bar-link {
   color: white;
+}
+
+.unum-logo {
+  max-width: 100%;
+  display: flex;
 }
