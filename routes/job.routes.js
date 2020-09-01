@@ -3,7 +3,7 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const User = require("../models/User.model");
-const Skill = require("../models/Job.model");
+const Skill = require("../models/Skill.model");
 const Job = require("../models/Job.model");
 const mongoose = require("mongoose");
 

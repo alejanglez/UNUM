@@ -113,43 +113,44 @@ router.post("/signup", (req, res, next) => {
             ))}
           )
           Promise.all(skillsarray).then(() => {
+            console.log(req.session.currentUser);
             res.render('profileuser')
           });
         } else {
           User.findByIdAndUpdate(newUser._id, {$addToSet: {jobs: jobDescription},}).then(() =>{
           switch(jobDescription){
             case 'Painting and decorating':
-              icon = './public/images/icons/paintinganddecorating.png';
+              icon = 'images/icons/paintinganddecorating.png';
               break;
             case 'Babysitting':
-              icon = './public/images/icons/babysitting.png';
+              icon = 'images/icons/babysitting.png';
               break;
             case 'Cooking':
-              icon = './public/images/icons/cooking.png';
+              icon = 'images/icons/cooking.png';
               break;
             case 'Web development':
-              icon = './public/images/icons/web development.png';
+              icon = 'images/icons/web development.png';
               break;
             case 'Cleaning':
-              icon = './public/images/icons/cleaning.png';
+              icon = 'images/icons/cleaning.png';
               break;
             case 'Woodwork and general repairs':
-              icon = './public/images/icons/carpenter.png';
+              icon = 'images/icons/carpenter.png';
               break;
             case 'Gardening':
-              icon = './public/images/icons/gardening.png';
+              icon = 'images/icons/gardening.png';
               break;
             case 'Ironing':
-              icon = './public/images/icons/ironing.png';
+              icon = 'images/icons/ironing.png';
               break;
             case 'Homework help and tutoring':
-              icon = './public/images/icons/homework.png';
+              icon = 'images/icons/homework.png';
               break;
             case 'Hairdressing':
-              icon = './public/images/icons/hairdresser.png';
+              icon = 'images/icons/hairdresser.png';
               break;
             case 'Car washing (inside and out)':
-              icon = './public/images/icons/carwashing.png';
+              icon = 'images/icons/carwashing.png';
               break;
             default:
               icon = 'image not found';
@@ -160,7 +161,9 @@ router.post("/signup", (req, res, next) => {
             additionalInformation: additionalInfoJob, 
             jobowner: newUser._id,
             jobstatus: "current",
-          }).then(() => res.render('profileuser'))
+          }).then(() => {
+            console.log(req.session.currentUser);
+            res.render('profileuser')})
             .catch((err) => {
               console.log("JOB ERROR", err);
               next(err);
