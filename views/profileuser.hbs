@@ -1,22 +1,74 @@
 <section id="header-image">
   <img src='/images/headers/header_home1.png'>
 </section>
-
+<hr>
 {{#if errorMessage}}
 <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
 {{/if}}
-<p>The current user is {{name}}</p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">User Details</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+  <li class="list-group-item">Name: {{name}}</li>
+  <li class="list-group-item">Email address: {{email}}</li>
+  <li class="list-group-item">Telephone: {{telephone}}</li>
+  <li class="list-group-item">Address: {{address}}</li>
+</div>
+  </div>
+</div>
+<hr>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">Current Skills</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+  <li class="list-group-item">Skill 1: {{skill1}}</li>
+  <li class="list-group-item">Skill 2: {{skill2}}</li>
+  <li class="list-group-item">Skill 3: {{skill3}}</li>
+</div>
+  </div>
+</div>
+<hr>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">Current Jobs</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+  <li class="list-group-item">Job Description: {{this.jobDescription}}</li>
+  <li class="list-group-item">Additional Information: {{this.additionalInfoJob}}</li>
+  <li class="list-group-item">Assigned to: {{this.assignedTo}}</li>
+  <li class="list-group-item">Job Owner: {{this.jobOwner}}</li>
+  <li class="list-group-item">Contact Details: {{this.jobOwner.telephone}}{{JobOwner.email}}</li>
+  <li class="list-group-item">Job Status: {{this.jobStatus}}</li>
+      <!--{{#each Job}}--><!--{{/each}}-->
+</div>
+  </div>
+</div>
+<hr>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h5 class="panel-title">Completed Jobs</h3>
+  </div>
+  <div class="panel-body">
+    <div class="list-group">
+  <a href=# class="list-group-item">{{this.jobDescription}}</a>
+  <!--{{#each completedJob}}--><!--linking to job details page by id
+      {{/each}}-->
+</div>
+  </div>
+</div>
+<hr>
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-   <ul class="nav nav-pills nav-justified">
-  <li role="presentation"><a href="/jobslist">Jobs</a></li>
-  <li role="presentation"><a href="#">Create Job</a></li>
-  <li role="presentation"><a href="/edit">Edit details</a></li>
-  <!--<li role="presentation"><a href="/logout">Logout</a></li>-->
-  <form id="logout-form" action="/logout" method="POST">
-    <button>Logout</button>
+    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/jobslist">Jobs</a></button>
+    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/create-job">Create Job</a></button>
+    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/edit">Edit details</a></button>
+    <form id="logout-form" action="/logout" method="POST">
+    <button type="button" class="btn btn-info navbar-btn">Logout</button>
   </form>
-
-</ul>
   </div>
 </nav>
