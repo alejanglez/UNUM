@@ -34,16 +34,16 @@
 <hr>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h5 class="panel-title">Current Jobs</h3>
+    <h5 class="panel-title">Recent Jobs</h3>
   </div>
   <div class="panel-body">
     <div class="list-group">
-  <li class="list-group-item">Job Description: {{this.jobDescription}}</li>
-  <li class="list-group-item">Additional Information: {{this.additionalInfoJob}}</li>
-  <li class="list-group-item">Assigned to: {{this.assignedTo}}</li>
-  <li class="list-group-item">Job Owner: {{this.jobOwner}}</li>
-  <li class="list-group-item">Contact Details: {{this.jobOwner.telephone}}{{JobOwner.email}}</li>
-  <li class="list-group-item">Job Status: {{this.jobStatus}}</li>
+  <li class="list-group-item">Job Description: {{selectDescription}}</li>
+  <li class="list-group-item">Additional Information: {{additionalInformation}}</li>
+  <li class="list-group-item">Assigned to: {{skillProviderName}}</li>
+  <li class="list-group-item">Job Owner: {{jobOwnerName}}</li>
+  <li class="list-group-item">Contact Details:<br><br>{{jobOwnerTelephone}}<br><br>{{jobOwnerEmail}}</li>
+  <li class="list-group-item">Job Status: {{jobstatus}}</li>
       <!--{{#each Job}}--><!--{{/each}}-->
 </div>
   </div>
