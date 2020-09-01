@@ -22,3 +22,12 @@ a {
 .nav-bar-link {
   color: white;
 }
+#jobDescription {
+  color: #26BBAF;
+}
+#jobOwner {
+  color: #26BBAF;
+}
+#jobStatus {
+  color: red;
+}

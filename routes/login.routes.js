@@ -55,7 +55,7 @@ router.post('/login', (req, res, next) => {
 
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.render('logout.hbs')
+    res.render('logout')
   });
 })
 
