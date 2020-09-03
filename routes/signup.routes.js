@@ -119,40 +119,40 @@ router.post("/signup", (req, res, next) => {
         } else {
           switch(jobDescription){
             case 'Painting and decorating':
-              image = 'images/icons/paintinganddecorating.jpg';
+              icon = 'images/icons/paintinganddecorating1.png';
               break;
             case 'Babysitting':
-              image = 'images/icons/babysitting.jpg';
+              icon = 'images/icons/babysitting1.png';
               break;
             case 'Cooking':
-              image = 'images/icons/cooking.jpg';
+              icon = 'images/icons/cooking1.png';
               break;
             case 'Web development':
-              image = 'images/icons/web development.png';
+              icon = 'images/icons/web development1.png';
               break;
             case 'Cleaning':
-              image = 'images/icons/cleaning.jpg';
+              icon = 'images/icons/cleaning1.png';
               break;
             case 'Woodwork and general repairs':
-              image = 'images/icons/carpenter.jpg';
+              icon = 'images/icons/carpenter1.png';
               break;
             case 'Gardening':
-              image = 'images/icons/gardening.jpg';
+              icon = 'images/icons/gardening1.png';
               break;
             case 'Ironing':
-              image = 'images/icons/ironing.jpg';
+              icon = 'images/icons/ironing1.png';
               break;
             case 'Homework help and tutoring':
-              image = 'images/icons/homework.png';
+              icon = 'images/icons/homework1.png';
               break;
             case 'Hairdressing':
-              image = 'images/icons/hairdresser.png';
+              icon = 'images/icons/hairdresser1.png';
               break;
             case 'Car washing (inside and out)':
-              image = 'images/icons/carwashing.jpg';
+              icon = 'images/icons/carwashing1.png';
               break;
             default:
-              image = 'image not found';
+              icon = 'image not found';
           };
           Job.create({
             selectDescription: jobDescription,
