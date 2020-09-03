@@ -8,26 +8,50 @@ a {
   color: #00b7ff;
 }
 
+h1 {
+  font-size: 7vw;
+}
+
 .card img {
-  height: 200px;
+  max-width: 100%;
   object-fit: cover;
 }
 
 .card {
   background: none;
 }
+
+#containerDetail{
+  max-width: 100%;
+}
+
+#containerList{
+  max-width: 100%;
+}
+
+
 .panel-title {
   color: white;
 }
+
 .nav-bar-link {
   color: white;
 }
+
 #jobDescription {
+  font-size: 5vw;
   color: #26BBAF;
 }
+
+#additionalInformation {
+  font-size: 4vw;
+}
+
 #jobOwner {
+  font-size: 1,5vw;
   color: #26BBAF;
 }
+
 #jobStatus {
   color: red;
 }
