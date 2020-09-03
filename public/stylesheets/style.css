@@ -4,6 +4,7 @@ body {
   background-color: #299088;
 }
 
+
 a {
   color: #00b7ff;
 }
@@ -11,6 +12,7 @@ a {
 h1 {
   font-size: 7vw;
 }
+
 
 .card img {
   max-width: 100%;
@@ -20,6 +22,8 @@ h1 {
 .card {
   background: none;
 }
+
+
 
 #containerDetail{
   max-width: 100%;

@@ -43,8 +43,8 @@ router.post('/login', (req, res, next) => {
 //*** Save user ***//
 
        req.session.currentUser = user;
-        res.redirect('/profile-user');
-       // res.render("profileuser");
+        //res.redirect('/profile-user');
+       res.render("profileuser",req.session.currentUser);
  
       }else {
         res.render('auth/login', {errorMessage: 'Incorrect password'});
