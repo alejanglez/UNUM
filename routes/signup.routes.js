@@ -6,6 +6,7 @@ const saltRounds = 10;
 const User = require("../models/User.model");
 const Skill = require("../models/Skill.model");
 const Job = require("../models/Job.model");
+const session = require("express-session");
 const mongoose = require("mongoose");
 
 router.use(bodyParser.json());
