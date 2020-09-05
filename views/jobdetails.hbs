@@ -4,6 +4,7 @@
   {{/if}}
   <div class="jumbotron">
     <h1 id="jobDescription">{{selectDescription}}</h1>
+    <h3 id="jobid">{{jobid}}</h3>
     <p></p>
     <h2 id="additionalInformation">{{additionalInformation}}</p>
       <hr>
@@ -15,6 +16,6 @@
         <p><i>The job owner's contact details will be shared with you if you accept this job.</i></p>
         <hr>
         <h6 id="jobOwner">Job Status <span id="jobStatus">{{jobstatus}}</span></p>
-          <p><a class="btn btn-warning btn-lg" href="/profile-user/acceptjob" role="button">Accept Job</a></p>
+          <p><a class="btn btn-warning btn-lg" href="/acceptjob/{{jobid}}" role="button">Accept Job</a></p>
           <p><a class="btn btn-secondary" href="/jobslist" role="button">Back</a></p>
   </div>

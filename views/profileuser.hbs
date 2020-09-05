@@ -6,58 +6,58 @@
 {{/if}}
 <hr>
 <form>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h5 class="panel-title">User Details</h3>
-  </div>
-  <div class="panel-body">
-    <div class="list-group">
-      <li class="list-group-item">Name: {{name}}</li>
-      <li class="list-group-item">Email address: {{email}}</li>
-      <li class="list-group-item">Telephone: {{telephone}}</li>
-      <li class="list-group-item">Address: {{address}}</li>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">User Details</h3>
+    </div>
+    <div class="panel-body">
+      <div class="list-group">
+        <li class="list-group-item">Name: {{name}}</li>
+        <li class="list-group-item">Email address: {{email}}</li>
+        <li class="list-group-item">Telephone: {{telephone}}</li>
+        <li class="list-group-item">Address: {{address}}</li>
+      </div>
     </div>
   </div>
-</div>
-<hr>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h5 class="panel-title">Current Skills</h3>
-  </div>
-  <div class="panel-body">
-    <div class="list-group">
-      {{#each skills}}
-      <li class="list-group-item">{{this.selectDescription}}</li>
-      {{/each}}
+  <hr>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">Current Skills</h3>
+    </div>
+    <div class="panel-body">
+      <div class="list-group">
+        {{#each skills}}
+        <li class="list-group-item">{{this.selectDescription}}</li>
+        {{/each}}
+      </div>
     </div>
   </div>
-</div>
-<hr>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h5 class="panel-title">Current Jobs</h3>
+  <hr>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">Current Jobs</h3>
+    </div>
+    {{> recentJobs this}}
   </div>
-  {{> recentJobs this}}
-</div>
-<hr>
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h5 class="panel-title">Completed Jobs</h5>
-  </div>
-  <div class="panel-body">
-    <div class="list-group">
-      <ul>
-        {{> completedJobs this}}
-      </ul>
+  <hr>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">Completed Jobs</h5>
+    </div>
+    <div class="panel-body">
+      <div class="list-group">
+        <ul>
+          {{> completedJobs this}}
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 </form>
 <hr>
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/jobslist">Jobs</a></button>
-    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/create-job">Create
+    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/createjob">Create
         Job</a></button>
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/edit">Edit details</a></button>
     <form id="logout-form" action="/logout" method="POST">
