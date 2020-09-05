@@ -33,9 +33,9 @@ router.post("/edit", (req, res) => {
 
 //DELETE USER PROFILE
 router.get('/:id/delete', (req, res) => {
-  const {id} = req.params;
+  const {id} = req.params.id;
   User.model.findByIdAndDelete(id)
-    .then(() => res.redirect('/logout')) //doing logout when delete it
+    .then(() => res.redirect('deletedprofile')) //doing logout when delete it
     .catch((err) => {
       console.log(`Error while deleting the profile: ${err}`);
       next();
