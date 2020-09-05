@@ -1,14 +1,19 @@
-  {{#each jobs}}
-  {{#if this.jobstatus==="current"}}
-  <div class="panel-body">
-    <div class="list-group">
-  <li class="list-group-item">Job Description: {{this.selectDescription}}</li>
-  <li class="list-group-item">Additional Information: {{this.additionalInformation}}</li>
-  <li class="list-group-item">Assigned to: {{this.skillProviderName}}</li>
-  <li class="list-group-item">Job Owner: {{this.jobOwnerName}}</li>
-  <li class="list-group-item">Contact Details:<br><br>{{this.jobOwnerTelephone}}<br><br>{{this.jobOwnerEmail}}</li>
-  <li class="list-group-item">Job Status: {{this.jobstatus}}</li>
-</div>
+{{#each jobs}}
+{{#ifEqual this.jobstatus "current"}}
+
+<div class="panel-body">
+  <div class="list-group">
+    <li class="list-group-item">Job Description: {{this.selectDescription}}</li>
+    <li class="list-group-item">Additional Information: {{this.additionalInformation}}</li>
+    {{#if this.allocation}}
+    <li class="list-group-item">Assigned to: {{this.allocation.name}}</li>
+    {{else}}
+    <li class="list-group-item">Assigned to: Not yet assigned</li>
+    {{/if}}
+    <li class="list-group-item">Job Owner: {{this.jobowner.name}}</li>
+    <li class="list-group-item">Contact Details:<br><br>{{this.jobowner.telephone}}<br><br>{{this.jobowner.email}}</li>
+    <li class="list-group-item">Job Status: {{this.jobstatus}}</li>
   </div>
-  {{/if}}
-  {{/each}}
+</div>
+{{/ifEqual}}
+{{/each}}

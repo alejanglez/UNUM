@@ -17,30 +17,68 @@ router.get("/jobslist", (req, res, next) => {
       res.render("jobslist", {
         errorMessage: "Problem retrieving jobs from database",
       })
-    )
+    );
 });
 
 router.get("/jobdetails/:id", (req, res, next) => {
-  const  searchId  = req.params.id;
+  const searchId = req.params.id;
   console.log(searchId);
   Job.findOne({ _id: searchId })
     .then((jobdetailsFromDB) => {
-        console.log(jobdetailsFromDB.jobowner);
-      User.findOne({_id:jobdetailsFromDB.jobowner}).then((foundUser) => {
-        console.log(foundUser)
-        const { selectDescription, additionalInformation, jobstatus } = jobdetailsFromDB;
+      console.log(jobdetailsFromDB.jobowner);
+      User.findOne({ _id: jobdetailsFromDB.jobowner }).then((foundUser) => {
+        console.log(foundUser);
+        const {
+          selectDescription,
+          additionalInformation,
+          jobstatus,
+        } = jobdetailsFromDB;
         console.log(selectDescription, additionalInformation, jobstatus);
         const { name, address } = foundUser;
         console.log(name, address);
         const infoForJobCard = {
-            selectDescription,
-            additionalInformation,
-            jobstatus,
-            name,
-            address
+          selectDescription,
+          additionalInformation,
+          jobstatus,
+          name,
+          address,
         };
         console.log(infoForJobCard);
-        res.render("jobdetails",  infoForJobCard );
+        res.render("jobdetails", infoForJobCard);
+      });
+    })
+    .catch((error) =>
+      res.render("jobslist", {
+        errorMessage: "Problem retrieving job details from database",
+      })
+    );
+});
+
+router.get("/completedjobdetails/:id", (req, res, next) => {
+  const searchId = req.params.id;
+  console.log(searchId);
+  Job.findOne({ _id: searchId })
+    .then((jobdetailsFromDB) => {
+      console.log(jobdetailsFromDB.jobowner);
+      User.findOne({ _id: jobdetailsFromDB.jobowner }).then((foundUser) => {
+        console.log(foundUser);
+        const {
+          selectDescription,
+          additionalInformation,
+          jobstatus,
+        } = jobdetailsFromDB;
+        console.log(selectDescription, additionalInformation, jobstatus);
+        const { name, address } = foundUser;
+        console.log(name, address);
+        const infoForJobCard = {
+          selectDescription,
+          additionalInformation,
+          jobstatus,
+          name,
+          address,
+        };
+        console.log(infoForJobCard);
+        res.render("completedjobdetails", infoForJobCard);
       });
     })
     .catch((error) =>

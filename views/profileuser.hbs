@@ -26,9 +26,7 @@
   <div class="panel-body">
     <div class="list-group">
       {{#each skills}}
-      {{#if !this.selectDescription==="Skill1" || "Skill2" || "Skill3"}}
-       <li class="list-group-item">{{this.selectDescription}}</li>
-       {{/if}}
+      <li class="list-group-item">{{this.selectDescription}}</li>
       {{/each}}
     </div>
   </div>
@@ -36,7 +34,7 @@
 <hr>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h5 class="panel-title">Recent Jobs</h3>
+    <h5 class="panel-title">Current Jobs</h3>
   </div>
   {{> recentJobs this}}
 </div>
