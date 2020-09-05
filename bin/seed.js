@@ -80,7 +80,7 @@ User.create(users)
       const jobs = [
         {
           selectDescription: "Painting and decorating",
-          image: "/images/icons/paintinganddecorating.jpg",
+          image: "/images/icons/paintinganddecorating1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -88,7 +88,7 @@ User.create(users)
         },
         {
           selectDescription: "Babysitting",
-          image: "/images/icons/babysitting.jpg",
+          image: "/images/icons/babysitting1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -96,7 +96,7 @@ User.create(users)
         },
         {
           selectDescription: "Cooking",
-          image: "/images/icons/cooking.jpg",
+          image: "/images/icons/cooking1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -104,7 +104,7 @@ User.create(users)
         },
         {
           selectDescription: "Web development",
-          image: "/images/icons/web development.png",
+          image: "/images/icons/web development1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -112,7 +112,7 @@ User.create(users)
         },
         {
           selectDescription: "Cleaning",
-          image: "/images/icons/cleaning.jpg",
+          image: "/images/icons/cleaning1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -128,7 +128,7 @@ User.create(users)
         },
         {
           selectDescription: "Gardening",
-          image: "/images/icons/gardening.jpg",
+          image: "/images/icons/gardening1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -136,7 +136,7 @@ User.create(users)
         },
         {
           selectDescription: "Ironing",
-          image: "/images/icons/ironing.jpg",
+          image: "/images/icons/ironing1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -144,7 +144,7 @@ User.create(users)
         },
         {
           selectDescription: "Homework help and tutoring",
-          image: "/images/icons/homework.png",
+          image: "/images/icons/homework1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -152,7 +152,7 @@ User.create(users)
         },
         {
           selectDescription: "Hairdressing",
-          image: "/images/icons/hairdresser.png",
+          image: "/images/icons/hairdresser1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",
@@ -160,7 +160,7 @@ User.create(users)
         },
         {
           selectDescription: "Car washing (inside and out)",
-          image: "/images/icons/carwashing.jpg",
+          image: "/images/icons/carwashing1.png",
           additionalInformation: "Example for icon",
           jobowner: [superUserid],
           jobstatus: "completed",

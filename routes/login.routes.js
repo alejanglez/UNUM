@@ -42,6 +42,7 @@ router.post("/login", (req, res, next) => {
       } else if (bcrypt.compareSync(passwordHash, user.passwordHash)) {
         //*** Save user ***//
 
+
         req.session.currentUser = user;
         res.redirect("/profile-user");
         // res.render("profileuser");
