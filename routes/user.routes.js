@@ -16,10 +16,14 @@ router.get("/profile-user", (req, res, next) => {
 })
 //EDIT USER PROFILE
 router.get('/edit', (req, res) => {
-  res.render('edit-details.hbs')
+  console.log("PROFILE EDIT",req.session.currentUser)
+
+  res.render('edit-details.hbs', {userInSession:req.session.currentUser})
 })
 
 router.post("/edit", (req, res) => {
+  let userData = req.session.userInSession
+  console.log(req.body)
   User.findByIdAndUpdate( userData._id, {$set: req.body})
   .then(() => {
     res.redirect('profile-user')
@@ -28,7 +32,7 @@ router.post("/edit", (req, res) => {
 
 
 //DELETE USER PROFILE
-router.get('/delete', (req, res) => {
+router.get('/:id/delete', (req, res) => {
   const {id} = req.params;
   User.model.findByIdAndDelete(id)
     .then(() => res.redirect('/logout')) //doing logout when delete it
