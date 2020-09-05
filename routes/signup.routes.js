@@ -8,8 +8,6 @@ const Skill = require("../models/Skill.model");
 const Job = require("../models/Job.model");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const session = require("express-session");
-const MongoStore = require("connect-mongo")(session);
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -124,39 +122,39 @@ router.post("/signup", (req, res, next) => {
             res.redirect("/auth/login");
           });
         } else {
-          switch(jobDescription){
-            case 'Painting and decorating':
-              icon = 'images/icons/paintinganddecorating1.png';
+          switch (jobDescription) {
+            case "Painting and decorating":
+              icon = "images/icons/paintinganddecorating1.png";
               break;
-            case 'Babysitting':
-              icon = 'images/icons/babysitting1.png';
+            case "Babysitting":
+              icon = "images/icons/babysitting1.png";
               break;
-            case 'Cooking':
-              icon = 'images/icons/cooking1.png';
+            case "Cooking":
+              icon = "images/icons/cooking1.png";
               break;
-            case 'Web development':
-              icon = 'images/icons/web development1.png';
+            case "Web development":
+              icon = "images/icons/web development1.png";
               break;
-            case 'Cleaning':
-              icon = 'images/icons/cleaning1.png';
+            case "Cleaning":
+              icon = "images/icons/cleaning1.png";
               break;
-            case 'Woodwork and general repairs':
-              icon = 'images/icons/carpenter1.png';
+            case "Woodwork and general repairs":
+              icon = "images/icons/carpenter1.png";
               break;
-            case 'Gardening':
-              icon = 'images/icons/gardening1.png';
+            case "Gardening":
+              icon = "images/icons/gardening1.png";
               break;
-            case 'Ironing':
-              icon = 'images/icons/ironing1.png';
+            case "Ironing":
+              icon = "images/icons/ironing1.png";
               break;
-            case 'Homework help and tutoring':
-              icon = 'images/icons/homework1.png';
+            case "Homework help and tutoring":
+              icon = "images/icons/homework1.png";
               break;
-            case 'Hairdressing':
-              icon = 'images/icons/hairdresser1.png';
+            case "Hairdressing":
+              icon = "images/icons/hairdresser1.png";
               break;
-            case 'Car washing (inside and out)':
-              icon = 'images/icons/carwashing1.png';
+            case "Car washing (inside and out)":
+              icon = "images/icons/carwashing1.png";
               break;
             default:
               icon = "image not found";
