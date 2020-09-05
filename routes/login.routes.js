@@ -60,14 +60,6 @@ router.post("/logout", (req, res) => {
   });
 });
 
-/*
-router.post("/logout", (req,res) => {
-  req.session.destroy();
-  res.render('logout.hbs')
-  res.redirect("/logout");
-})
-*/
-
 router.get("/profile-user", (req, res, next) => {
   console.log(req.session.currentUser);
   const currentUser = req.session.currentUser;
@@ -82,161 +74,22 @@ router.get("/profile-user", (req, res, next) => {
     jobs,
   } = currentUser;
 
-  User.findById(_id).populate("jobs").populate({path:"jobs", populate:{
-    path:"jobowner",
-    model:"User"
-  }}).populate({path:"jobs", populate:{path:"allocation", model:"User"}}).populate("skills").then(userData => {
-    console.log("userData", userData)
-    res.render("profileuser", userData)
-  })
-
-  // Job.find({jobowner: currentUser._id, jobstatus:"completed"})
-  // .then ((returnedJobs) => {
-  //   var completedJobs = [];
-  //   returnedJobs.forEach(job => {
-  //     completedJobs.push(job._id)
-  //   })
-  //   return completedJobs;
-  //   })
-  // .catch((error) => next(error));
-
-  // Job.find({ jobowner: currentUser._id })
-  //   .then((foundJobs) => {
-  //     console.log(foundJobs);
-  //     const completedJobs = [];
-  //     const promisesArr = foundJobs.map((job, i) => {
-  //       if (job.jobstatus === "current") {
-  //         Job.findById(job._id).then((jobdetailsFromDB) => {
-  //           const {
-  //             selectDescription,
-  //             additionalInformation,
-  //             jobowner,
-  //             jobstatus,
-  //             allocation,
-  //           } = jobdetailsFromDB;
-  //           console.log(
-  //             "JOB DETAILS FROM DB ",
-  //             selectDescription,
-  //             additionalInformation,
-  //             jobowner,
-  //             jobstatus,
-  //             allocation
-  //           );
-  //           return User.findOne({ _id: jobdetailsFromDB.jobowner }).then(
-  //             (foundJobOwner) => {
-  //               const {
-  //                 name: jobOwnerName,
-  //                 email: jobOwnerEmail,
-  //                 telephone: jobOwnerTelephone,
-  //               } = foundJobOwner;
-
-  //               if (!allocation) {
-  //                 return {
-  //                   name,
-  //                   email,
-  //                   telephone,
-  //                   address,
-  //                   selectDescription,
-  //                   additionalInformation,
-  //                   skillProviderName: "Not yet assigned",
-  //                   jobOwnerName,
-  //                   jobOwnerEmail,
-  //                   jobOwnerTelephone,
-  //                   jobstatus,
-  //                 };
-  //               }
-  //               return User.findOne({ _id: jobdetailsFromDB.allocation }).then(
-  //                 (foundSkillProvider) => {
-  //                   const { name: skillProviderName } = foundSkillProvider;
-  //                   return {
-  //                     name,
-  //                     email,
-  //                     telephone,
-  //                     address,
-  //                     selectDescription,
-  //                     additionalInformation,
-  //                     skillProviderName,
-  //                     jobOwnerName,
-  //                     jobOwnerEmail,
-  //                     jobOwnerTelephone,
-  //                     jobstatus,
-  //                   };
-  //                 }
-  //               );
-  //             }
-  //           );
-  //         });
-  //       } else {
-  //         completedJobs.push(job._id);
-  //       }
-  //     });
-  //     console.log(promisesArr);
-  //     Promise.all(promisesArr).then((promises) => {
-  //       console.log("JOOOOBS", promises);
-  //       res.render("profileuser", {
-  //         recentJobs: promises,
-  //         completedJobs: completedJobs,
-  //       });
-  //     });
-    // })
-    .catch((error) => next(error))
+  User.findById(_id)
+    .populate("jobs")
+    .populate({
+      path: "jobs",
+      populate: {
+        path: "jobowner",
+        model: "User",
+      },
+    })
+    .populate({ path: "jobs", populate: { path: "allocation", model: "User" } })
+    .populate("skills")
+    .then((userData) => {
+      console.log("userData", userData);
+      res.render("profileuser", userData);
+    })
+    .catch((error) => next(error));
 });
-
-// for (let i=0; i < recentJobs.length; i++){
-// const jobId = recentJobs[i]._id;
-// Job.findOne({ _id: jobId }).then((jobdetailsFromDB) => {
-//   const {
-//     selectDescription,
-//     additionalInformation,
-//     jobowner,
-//     jobstatus,
-//     allocation,
-//   } = jobdetailsFromDB;
-//   console.log(
-//     selectDescription,
-//     additionalInformation,
-//     jobowner,
-//     jobstatus,
-//     allocation
-//   );
-// User.findOne({ _id: jobdetailsFromDB.jobowner }).then(
-//   (foundJobOwner) => {
-//     const {
-//       name: jobOwnerName,
-//       email: jobOwnerEmail,
-//       telephone: jobOwnerTelephone,
-//     } = foundJobOwner;
-//     if (allocation) {
-//       //     User.findOne({_id:jobdetailsFromDB.allocation}).then((foundSkillProvider) => {
-//       //     const { name:skillProviderName } = foundSkillProvider;
-//       //     const infoForProfilePage = {
-//       //       name,
-//       //       email,
-//       //       telephone,
-//       //       address,
-//       //       selectDescription,
-//       //       additionalInformation,
-//       //       skillProviderName,
-//       //       jobOwnerName,
-//       //       jobOwnerEmail,
-//       //       jobOwnerTelephone,
-//       //       jobstatus
-//       //   };
-//       // });
-//     } else {
-//       const infoForProfilePage = {
-//         name,
-//         email,
-//         telephone,
-//         address,
-//         selectDescription,
-//         additionalInformation,
-//         skillProviderName: "Not yet assigned",
-//         jobOwnerName,
-//         jobOwnerEmail,
-//         jobOwnerTelephone,
-//         jobstatus,
-//       };
-//     }
 
 module.exports = router;
