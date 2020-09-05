@@ -7,6 +7,8 @@ const User = require("../models/User.model");
 const Skill = require("../models/Skill.model");
 const Job = require("../models/Job.model");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -99,84 +101,89 @@ router.post("/signup", (req, res, next) => {
         jobowner,
         signupagreement,
         jobDescription,
-        additionalInfoJob
-      })
-      .then((newUser) => {
-        console.log("Newly created user is: ",newUser);
+        additionalInfoJob,
+      }).then((newUser) => {
+        console.log("Newly created user is: ", newUser);
         if (skillprovider) {
-          User.findByIdAndUpdate(newUser._id, {$addToSet: {skills: [skill1, skill2, skill3]},}).then(() =>{
-          const skillsarray = [skill1, skill2, skill3].map((skill) =>
-            Skill.findOne({ selectDescription: skill }).then((foundSkill) =>
-              console.log(foundSkill) || Skill.findByIdAndUpdate(foundSkill._id, {
-                $addToSet: { skillprovider: newUser._id },
-              })
-            ))}
-          )
+          User.findByIdAndUpdate(newUser._id, {
+            $addToSet: { skills: [skill1, skill2, skill3] },
+          }).then(() => {
+            const skillsarray = [skill1, skill2, skill3].map((skill) =>
+              Skill.findOne({ selectDescription: skill }).then(
+                (foundSkill) =>
+                  console.log(foundSkill) ||
+                  Skill.findByIdAndUpdate(foundSkill._id, {
+                    $addToSet: { skillprovider: newUser._id },
+                  })
+              )
+            );
+          });
           Promise.all(skillsarray).then(() => {
             console.log(req.session.currentUser);
-            res.render('profileuser', req.session.currentUser)
+            res.redirect("/auth/login");
           });
         } else {
-          switch(jobDescription){
-            case 'Painting and decorating':
-              icon = 'images/icons/paintinganddecorating.jpg';
+          switch (jobDescription) {
+            case "Painting and decorating":
+              icon = "images/icons/paintinganddecorating.jpg";
               break;
-            case 'Babysitting':
-              icon = 'images/icons/babysitting.jpg';
+            case "Babysitting":
+              icon = "images/icons/babysitting.jpg";
               break;
-            case 'Cooking':
-              icon = 'images/icons/cooking.jpg';
+            case "Cooking":
+              icon = "images/icons/cooking.jpg";
               break;
-            case 'Web development':
-              icon = 'images/icons/web development.png';
+            case "Web development":
+              icon = "images/icons/web development.png";
               break;
-            case 'Cleaning':
-              icon = 'images/icons/cleaning.jpg';
+            case "Cleaning":
+              icon = "images/icons/cleaning.jpg";
               break;
-            case 'Woodwork and general repairs':
-              icon = 'images/icons/carpenter.jpg';
+            case "Woodwork and general repairs":
+              icon = "images/icons/carpenter.jpg";
               break;
-            case 'Gardening':
-              icon = 'images/icons/gardening.jpg';
+            case "Gardening":
+              icon = "images/icons/gardening.jpg";
               break;
-            case 'Ironing':
-              icon = 'images/icons/ironing.jpg';
+            case "Ironing":
+              icon = "images/icons/ironing.jpg";
               break;
-            case 'Homework help and tutoring':
-              icon = 'images/icons/homework.png';
+            case "Homework help and tutoring":
+              icon = "images/icons/homework.png";
               break;
-            case 'Hairdressing':
-              icon = 'images/icons/hairdresser.png';
+            case "Hairdressing":
+              icon = "images/icons/hairdresser.png";
               break;
-            case 'Car washing (inside and out)':
-              icon = 'images/icons/carwashing.jpg';
+            case "Car washing (inside and out)":
+              icon = "images/icons/carwashing.jpg";
               break;
             default:
-              icon = 'image not found';
-          };
+              icon = "image not found";
+          }
           Job.create({
             selectDescription: jobDescription,
             image: icon,
-            additionalInformation: additionalInfoJob, 
+            additionalInformation: additionalInfoJob,
             jobowner: newUser._id,
-            jobstatus: "current"
+            jobstatus: "current",
           })
-          .then((newJob) => {
-            console.log(newJob._id);
-            User.findByIdAndUpdate(newUser._id, {$addToSet: {jobs: newJob._id},
+            .then((newJob) => {
+              console.log(newJob._id);
+              User.findByIdAndUpdate(newUser._id, {
+                $addToSet: { jobs: newJob._id },
+              })
+                .then((updatedUser) => {
+                  console.log(updatedUser);
+                  res.redirect("/auth/login");
+                })
+                .catch((err) => console.log("USER UPDATE ERROR", err));
             })
-            .then((updatedUser) =>{ 
-            console.log(updatedUser);
-            res.render('profileuser', req.session.currentUser)
-          })
-          .catch(err => console.log("USER UPDATE ERROR", err))
-        })
             .catch((err) => {
               console.log("JOB ERROR", err);
               next(err);
-            })
+            });
         }
-      })
+      });
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -188,7 +195,7 @@ router.post("/signup", (req, res, next) => {
       } else {
         next(error);
       }
-    })
-  })
+    });
+});
 
-module.exports = router
+module.exports = router;
