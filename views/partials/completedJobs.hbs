@@ -1,3 +1,5 @@
-{{ #each completedJobs }}
+  {{#each jobs}}
+{{#if this.jobstatus==="completed"}}
   <li><a href="/jobdetails/{{this._id}}" class="list-group-item">{{this.jobDescription}}</a></li>
-{{ /each }}
+  {{/if}}
+  {{/each }}

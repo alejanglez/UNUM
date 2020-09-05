@@ -85,7 +85,7 @@ router.get("/profile-user", (req, res, next) => {
   User.findById(_id).populate("jobs").populate({path:"jobs", populate:{
     path:"jobowner",
     model:"User"
-  }}).then(userData => console.log("UserData", userData))
+  },populate:{path:"jobstatus"}}).populate("skills").populate({path:"skills", populate:{path:"skillprovider", model:"User"}}).then(userData => res.render("profileuser", userData)
 
   // Job.find({jobowner: currentUser._id, jobstatus:"completed"})
   // .then ((returnedJobs) => {
@@ -176,7 +176,7 @@ router.get("/profile-user", (req, res, next) => {
   //       });
   //     });
     // })
-    .catch((error) => next(error));
+    .catch((error) => next(error)))
 });
 
 // for (let i=0; i < recentJobs.length; i++){

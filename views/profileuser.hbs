@@ -26,11 +26,10 @@
   <div class="panel-body">
     <div class="list-group">
       {{#each skills}}
-       <li> {{name}}</li>
+      {{#if !this.selectDescription==="Skill1" || "Skill2" || "Skill3"}}
+       <li class="list-group-item">{{this.selectDescription}}</li>
+       {{/if}}
       {{/each}}
-      <li class="list-group-item">Skill 1: {{skill1}}</li>
-      <li class="list-group-item">Skill 2: {{skill2}}</li>
-      <li class="list-group-item">Skill 3: {{skill3}}</li>
     </div>
   </div>
 </div>
