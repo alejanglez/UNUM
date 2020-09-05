@@ -27,7 +27,7 @@
     <div class="panel-body">
       <div class="list-group">
         {{#each skills}}
-        <li class="list-group-item">{{this.selectDescription}}</li>
+        <li class="list-group-item">{{this}}</li>
         {{/each}}
       </div>
     </div>
@@ -61,7 +61,7 @@
         Job</a></button>
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/edit">Edit details</a></button>
     <form id="logout-form" action="/logout" method="POST">
-      <button type="button" class="btn btn-info navbar-btn">Logout</button>
+      <button type="submit" class="btn btn-info navbar-btn">Logout</button>
     </form>
   </div>
 </nav>

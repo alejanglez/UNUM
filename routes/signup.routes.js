@@ -107,7 +107,7 @@ router.post("/signup", (req, res, next) => {
           User.findByIdAndUpdate(newUser._id, {
             $addToSet: { skills: [skill1, skill2, skill3] },
           }).then(() => {
-            const skillsarray = [skill1, skill2, skill3].map((skill) =>
+            const skillsarray = [skill1, skill2, skill3].map((skill) => {
               Skill.findOne({ selectDescription: skill }).then(
                 (foundSkill) =>
                   console.log(foundSkill) ||
@@ -115,13 +115,13 @@ router.post("/signup", (req, res, next) => {
                     $addToSet: { skillprovider: newUser._id },
                   })
               )
-            );
-          });
+                });
           Promise.all(skillsarray).then(() => {
             console.log(req.session.currentUser);
             res.redirect("/auth/login");
           });
-        } else {
+        })
+      } else {
           switch (jobDescription) {
             case "Painting and decorating":
               icon = "images/icons/paintinganddecorating1.png";

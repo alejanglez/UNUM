@@ -42,7 +42,6 @@ router.post("/login", (req, res, next) => {
       } else if (bcrypt.compareSync(passwordHash, user.passwordHash)) {
         //*** Save user ***//
 
-
         req.session.currentUser = user;
         res.redirect("/profile-user");
         // res.render("profileuser");
@@ -54,11 +53,9 @@ router.post("/login", (req, res, next) => {
 });
 
 //LOGOUT//
-
 router.post("/logout", (req, res) => {
-  req.session.destroy(() => {
-    res.render("logout");
-  });
+  req.session.destroy();
+  res.render("logout");
 });
 
 router.get("/profile-user", (req, res, next) => {
@@ -73,6 +70,7 @@ router.get("/profile-user", (req, res, next) => {
     jobowner,
     skillprovider,
     jobs,
+    skills,
   } = currentUser;
 
   User.findById(_id)
@@ -85,7 +83,6 @@ router.get("/profile-user", (req, res, next) => {
       },
     })
     .populate({ path: "jobs", populate: { path: "allocation", model: "User" } })
-    .populate("skills")
     .then((userData) => {
       console.log("userData", userData);
       res.render("profileuser", userData);
