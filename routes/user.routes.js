@@ -24,12 +24,12 @@ router.get('/edit', (req, res) => {
 router.post("/edit", (req, res) => {
   let userData = req.session.userInSession
   console.log(req.body)
-  User.findByIdAndUpdate( userData._id, {$set: req.body})
-  .then(() => {
+  User.findByIdAndUpdate( userData._id, req.body, {new: true})
+  .then((currentUser) =>  {
+    req.session.currentUser = currentUser
     res.redirect('profile-user')
   })
 })
-
 
 //DELETE USER PROFILE
 router.get('/:id/delete', (req, res) => {
