@@ -21,21 +21,21 @@ router.get('/edit', (req, res) => {
   res.render('edit-details.hbs', {userInSession:req.session.currentUser})
 })
 
-router.post("/edit", (req, res) => {
-  let userData = req.session.userInSession
-  console.log(req.body)
+router.post("/update", (req, res) => {
+  let userData = req.session.currentUser;
+  console.log(req.body);
   User.findByIdAndUpdate( userData._id, {$set: req.body})
   .then(() => {
-    res.redirect('profile-user')
+    res.redirect('/profile-user')
   })
 })
 
 
 //DELETE USER PROFILE
 router.get('/:id/delete', (req, res) => {
-  const {id} = req.params;
+  const {id} = req.params.id;
   User.model.findByIdAndDelete(id)
-    .then(() => res.redirect('/logout')) //doing logout when delete it
+    .then(() => res.redirect('deletedprofile')) //doing logout when delete it
     .catch((err) => {
       console.log(`Error while deleting the profile: ${err}`);
       next();
