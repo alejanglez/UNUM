@@ -1,0 +1,5 @@
+{{#each jobs}}
+{{#ifEqual this.jobstatus "completed"}}
+<li><a href="/completedjobdetails/{{this._id}}" class="list-group-item">{{this.selectDescription}}</a></li>
+{{/ifEqual}}
+{{/each }}
