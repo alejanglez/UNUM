@@ -14,7 +14,7 @@ const storage = new CloudinaryStorage({
   // cloudinary: cloudinary,
   cloudinary,
   folder: 'UNUM', // The name of the folder in cloudinary
-  allowedFormats: ['jpg', 'png', 'svg'],
+  allowedFormats: ['jpg', 'png', 'svg', 'mp4'],
   params: { resource_type: 'raw' }, 
   filename: function (req, file, cb) {
     cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
