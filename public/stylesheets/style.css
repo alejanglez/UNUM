@@ -10,7 +10,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #26bbaf;
-  max-width: 100&;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .container {
@@ -23,8 +24,8 @@ body {
   margin-top: 100px;
   margin-bottom: auto;
   width: 400px;
-  background-color: #c92424!important;
-  opacity: 0.85;
+  background-color: #010133!important;
+  opacity: 0.9;
   border-radius: 25%;
 }
 
@@ -144,5 +145,6 @@ label {
   margin-left: 98%;
   max-width: 10%;
   max-height: 10%;
+  border: #010133 5px solid;
 
 }
