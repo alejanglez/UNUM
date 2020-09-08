@@ -42,7 +42,7 @@
   <div class="panel-body">
     <div class="form-group">
   <label for="skill1-input">Skill 1:</label>
-  <select class="form-control" id="skill1">
+  <select class="form-control" name="skill1" id="skill1" value="{{userInSession.skill1}}">
     <option>Skill 1</option>
     <option>Painting and decorating</option>
     <option>Painting and decorating</option>
@@ -58,7 +58,7 @@
     <option>Car washing (inside and out)</option>
   </select>
   <label for="skill2-input">Skill 2:</label>
-  <select class="form-control" id="skill2">
+  <select class="form-control" name="skill2" value="{{userInSession.skill2}}">
     <option>Skill 2</option>
     <option>Painting and decorating</option>
     <option>Babysitting</option>
@@ -73,7 +73,7 @@
     <option>Car washing (inside and out)</option>
   </select>
   <label for="skill3-input">Skill 3:</label>
-  <select class="form-control" id="skill3">
+  <select class="form-control" name="skill3" value="{{userInSession.skill3}}">
     <option>Skill 3</option>
     <option>Painting and decorating</option>
     <option>Babysitting</option>
@@ -102,7 +102,7 @@
   <li class="list-group-item">Assigned to: {{skillProviderName}}</li>
   <li class="list-group-item">Job Owner: {{jobOwnerName}}</li>
   <li class="list-group-item">Contact Details:<br><br>{{jobOwnerTelephone}}<br><br>{{jobOwnerEmail}}</li>
-  <li class="list-group-item">Job Status: {{jobstatus}}</li>
+  <li class="list-group-item" value="{{currentjobs.jobstatus}}">Job Status: {{jobstatus}}</li>
       <!--{{#each Job}}--><!--{{/each}}-->
 </div>
   </div>
@@ -124,7 +124,7 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <button type="submit" class="btn btn-info navbar-btn">Save changes</a></button>
-    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/delete">Delete profile</a></button>
+    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/deletedprofile">Delete profile</a></button>
  </div>
 </nav>
 </form>

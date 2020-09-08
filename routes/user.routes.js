@@ -23,7 +23,19 @@ router.get('/edit', (req, res) => {
 })
 
 router.post("/edit", (req, res) => {
+  console.log("Edit profile pressed up")
   let userData = req.session.currentUser
+  const {
+    name,
+    email,
+    telephone,
+    address,
+    passwordHash,
+    skill1,
+    skill2,
+    skill3,
+  
+  } = req.body;
   console.log("Profile edit", req.body)
 
   User.findByIdAndUpdate( userData._id, req.body, {new: true})
@@ -34,8 +46,8 @@ router.post("/edit", (req, res) => {
 })
 
 //DELETE USER PROFILE
-router.get('/:id/delete', (req, res) => {
-  const {id} = req.params.id;
+router.get('/delete', (req, res) => {
+  const {id} = req.params;
   User.findByIdAndDelete(id)
     .then(() => res.redirect('deletedprofile')) //doing logout when delete it
     .catch((err) => {
