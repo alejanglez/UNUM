@@ -1,81 +1,72 @@
 /* login page*/
 
-.transbox{
+.transbox {
   background-color: #ffffff;
   opacity: 0.6;
-  
 }
 
-body{
-  background: url('/images/UNUM-background.jpg') repeat;
+body {
+  background: url("/images/TrialUNUMbackground.png") repeat;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #299088;
+  background-color: #26bbaf;
   max-width: 100&;
 }
 
-
-.container{
-  
+.container {
   height: 100%;
   align-content: center;
 }
 
-.card{
+.card {
   height: 550px;
   margin-top: 100px;
   margin-bottom: auto;
   width: 400px;
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: #c92424!important;
+  opacity: 0.85;
+  border-radius: 25%;
 }
 
-.card-header h1{
+.card-header h1 {
   color: white;
 }
 
-
-.input-group-prepend span{
+.input-group-prepend span {
   width: 50px;
-  background-color: #299088;
+  background-color: #26bbaf;
   color: white;
-  border:0 !important;
+  border: 0 !important;
 }
-  
-input:focus{
-  outline: 0 0 0 0  !important;
+
+input:focus {
+  outline: 0 0 0 0 !important;
   box-shadow: 0 0 0 0 !important;
 }
 
-
-.login_btn{
+.login_btn {
   color: white;
   background-color: #299088;
   width: 100px;
 }
-    
-.login_btn:hover{
+
+.login_btn:hover {
   color: white;
   background-color: white;
 }
-    
-.links{
+
+.links {
   color: white;
 }
-    
-.links a{
+
+.links a {
   margin-left: 4px;
 }
 
-
-
-
-
-
-
-
-
-
-
+.tagline {
+  text-align: center;
+  font-family: Pacifico;
+}
 
 /*body {
   padding: 50px;
@@ -106,16 +97,13 @@ label {
   background: none;
 }
 
-
-
-#containerDetail{
+#containerDetail {
   max-width: 100%;
 }
 
-#containerList{
+#containerList {
   max-width: 100%;
 }
-
 
 .panel-title {
   color: white;
@@ -127,7 +115,7 @@ label {
 
 #jobDescription {
   font-size: 5vw;
-  color: #26BBAF;
+  color: #26bbaf;
 }
 
 #additionalInformation {
@@ -135,14 +123,26 @@ label {
 }
 
 #jobOwner {
-  font-size: 1,5vw;
-  color: #26BBAF;
+  font-size: 1, 5vw;
+  color: #26bbaf;
 }
 
 #jobStatus {
   color: red;
 }
 
-.jumbotron{
+.jumbotron {
   opacity: 0.9;
+}
+
+.logo {
+  text-align: center;
+}
+
+#acicon {
+  margin-top: 2%;
+  margin-left: 98%;
+  max-width: 10%;
+  max-height: 10%;
+
 }
