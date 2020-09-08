@@ -25,6 +25,7 @@ router.get('/edit', (req, res) => {
 router.post("/edit", (req, res) => {
   let userData = req.session.currentUser
   console.log("Profile edit", req.body)
+
   User.findByIdAndUpdate( userData._id, req.body, {new: true})
   .then((currentUser) =>  {
     req.session.currentUser = currentUser
@@ -35,7 +36,7 @@ router.post("/edit", (req, res) => {
 //DELETE USER PROFILE
 router.get('/:id/delete', (req, res) => {
   const {id} = req.params.id;
-  User.model.findByIdAndDelete(id)
+  User.findByIdAndDelete(id)
     .then(() => res.redirect('deletedprofile')) //doing logout when delete it
     .catch((err) => {
       console.log(`Error while deleting the profile: ${err}`);
