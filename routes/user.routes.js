@@ -13,17 +13,19 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/profile-user", (req, res, next) => {
   res.render("profileuser", {userInSession: req.session.currentUser});
+  console.log(req.body)
 })
 //EDIT USER PROFILE
 router.get('/edit', (req, res) => {
-  console.log("PROFILE EDIT",req.session.currentUser)
+ 
 
   res.render('edit-details.hbs', {userInSession:req.session.currentUser})
 })
 
-router.post("/:id/edit", (req, res) => {
-  let userData = req.session.userInSession
-  console.log(req.body)
+router.post("/edit", (req, res) => {
+  let userData = req.session.currentUser
+  console.log("Profile edit", req.body)
+
   User.findByIdAndUpdate( userData._id, req.body, {new: true})
   .then((currentUser) =>  {
     req.session.currentUser = currentUser
