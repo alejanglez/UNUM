@@ -6,30 +6,30 @@
 {{/if}}
 <hr>
 
-<form action="/{{_id}}/update" method="post">
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h5 class="panel-title">User Details</h3>
+<form action="/edit" method="post">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panel-title">User Details</h3>
+    </div>
+  <div class="panel-body">
+    <div class="list-group"></div>
+    <div>
+    <label for="name-input">Name:</label>
+    <input class="list-group-item" type="text" name="name" id="name-input" value="{{userInSession.name}}"/>
+    </div>
+    <div>
+    <label for="email-input">Email address:</label>
+    <input class="list-group-item" type="text" name="email" id="email-input" value="{{userInSession.email}}" />
+    </div>
+    <div>
+    <label for="telephone-input">Telephone:</label>
+    <input class="list-group-item" type="text" name="telephone" id="telephone-input" value="{{userInSession.telephone}}" />
+    </div>
+    <div>
+    <label for="address-input">Address:</label>
+    <input class="list-group-item" type="text" name="address" id="address-input" value="{{userInSession.address}}" />
+    </div>
   </div>
- <div class="panel-body">
-  <div class="list-group">
-  <div>
-  <label for="name-input">Name:</label>
-  <input class="list-group-item" type="text" name="name" id="name-input" value="{{userInSession.name}}"/>
-  </div>
-  <div>
-  <label for="email-input">Email address:</label>
-  <input class="list-group-item" type="text" name="email" id="email-input" value="{{userInSession.email}}" />
-  </div>
-  <div>
-  <label for="telephone-input">Telephone:</label>
-  <input class="list-group-item" type="text" name="telephone" id="telephone-input" value="{{userInSession.telephone}}" />
-  </div>
-  <div>
-  <label for="address-input">Address:</label>
-  <input class="list-group-item" type="text" name="address" id="address-input" value="{{userInSession.address}}" />
-  </div>
-</div>
   </div>
 </div>
 <hr>
@@ -119,14 +119,11 @@
   </div>
 </div>
 <hr>
-</form>
-
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
-    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/update">Save changes</a></button>
+    <button type="submit" class="btn btn-info navbar-btn">Save changes</a></button>
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/delete">Delete profile</a></button>
-    <form id="logout-form" action="/logout" method="POST"></form>
-    <button type="button" class="btn btn-info navbar-btn">Logout</button>
-  </form>
-  </div>
+ </div>
 </nav>
+</form>
+
