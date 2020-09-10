@@ -46,7 +46,7 @@ router.post("/login", (req, res, next) => {
         res.redirect("/profile-user");
         // res.render("profileuser");
       } else {
-        res.render("auth/login", { errorMessage: "Incorrect password" });
+        res.render("login", { errorMessage: "Incorrect password" });
       }
     })
     .catch((error) => next(error));

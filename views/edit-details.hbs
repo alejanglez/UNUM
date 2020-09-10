@@ -1,140 +1,133 @@
 <section id="header-image">
   <div class="header">
     <h1>Unum,<h1>
-    <h2>edit details.</h2>
+        <h2>edit details.</h2>
+  </div>
 </section>
 {{#if errorMessage}}
 <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
 {{/if}}
 <hr>
-
-<form action="/edit" method="post">
-
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">User Details</h3>
+<form action="/user/{{_id}}/edit" method="post" class="form-edit">
+  <section class="user-details">
+    <h5>User Details</h5>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name" id="name-input" value="{{name}}">
     </div>
-
-    <div class="panel-body">
-      <div class="list-group"></div>
-      <div>
-        <label for="name-input">Name:</label>
-        <input class="list-group-item" type="text" name="name" id="name-input" value="{{userInSession.name}}" />
-      </div>
-      <div>
-        <label for="email-input">Email address:</label>
-        <input class="list-group-item" type="text" name="email" id="email-input" value="{{userInSession.email}}" />
-      </div>
-      <div>
-        <label for="telephone-input">Telephone:</label>
-        <input class="list-group-item" type="text" name="telephone" id="telephone-input"
-          value="{{userInSession.telephone}}" />
-      </div>
-      <div>
-        <label for="address-input">Address:</label>
-        <input class="list-group-item" type="text" name="address" id="address-input"
-          value="{{userInSession.address}}" />
-      </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" name="email" id="email-input" value="{{email}}">
     </div>
-  </div>
-  </div>
+    <div class="form-group">
+      <label for="phone-number">Telephone</label>
+      <input type="number" class="form-control" name="telephone" id="phone-input" value="{{telephone}}">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="mixed" class="form-control" name="address" id="address-input" value="{{address}}">
+    </div>
+  </section>
   <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Current Skills</h3>
+  <section class="current-skills">
+    <h5>Current Skills</h5>
+    <div class="form-group">
+      <select class="form-control" type="text" name="skill1" id="skillSelectBox">
+        <option>{{skills.[0]}}</option>
+        <option>Painting and decorating</option>
+        <option>Babysitting</option>
+        <option>Cooking</option>
+        <option>Web development</option>
+        <option>Cleaning</option>
+        <option>Woodwork and general repairs</option>
+        <option>Gardening</option>
+        <option>Ironing</option>
+        <option>Homework help and tutoring</option>
+        <option>Hairdressing</option>
+        <option>Car washing (inside and out)</option>
+        <option>n/a</option>
+      </select>
     </div>
-    <div class="panel-body">
-      <div class="form-group">
-        <label for="skill1-input">Skill 1:</label>
-        <select class="form-control" name="skill1" id="skill1" value="{{userInSession.foundSkill.skill1}}">
-          <option>Skill 1</option>
-          <option>Painting and decorating</option>
-          <option>Painting and decorating</option>
-          <option>Babysitting</option>
-          <option>Cooking</option>
-          <option>Web development</option>
-          <option>Cleaning</option>
-          <option>Woodwork and general repairs</option>
-          <option>Gardening</option>
-          <option>Ironing</option>
-          <option>Homework help and tutoring</option>
-          <option>Hairdressing</option>
-          <option>Car washing (inside and out)</option>
-        </select>
-        <label for="skill2-input">Skill 2:</label>
-        <select class="form-control" name="skill2" value="{{userInSession.skill2}}">
-          <option>Skill 2</option>
-          <option>Painting and decorating</option>
-          <option>Babysitting</option>
-          <option>Cooking</option>
-          <option>Web development</option>
-          <option>Cleaning</option>
-          <option>Woodwork and general repairs</option>
-          <option>Gardening</option>
-          <option>Ironing</option>
-          <option>Homework help and tutoring</option>
-          <option>Hairdressing</option>
-          <option>Car washing (inside and out)</option>
-        </select>
-        <label for="skill3-input">Skill 3:</label>
-        <select class="form-control" name="skill3" value="{{userInSession.skill3}}">
-          <option>Skill 3</option>
-          <option>Painting and decorating</option>
-          <option>Babysitting</option>
-          <option>Cooking</option>
-          <option>Web development</option>
-          <option>Cleaning</option>
-          <option>Woodwork and general repairs</option>
-          <option>Gardening</option>
-          <option>Ironing</option>
-          <option>Homework help and tutoring</option>
-          <option>Hairdressing</option>
-          <option>Car washing (inside and out)</option>
-        </select>
-      </div>
+    <div class="form-group">
+      <select class="form-control" type="text" name="skill2" id="skillSelectBox">
+        <option>{{skills.[1]}}</option>
+        <option>Painting and decorating</option>
+        <option>Babysitting</option>
+        <option>Cooking</option>
+        <option>Web development</option>
+        <option>Cleaning</option>
+        <option>Woodwork and general repairs</option>
+        <option>Gardening</option>
+        <option>Ironing</option>
+        <option>Homework help and tutoring</option>
+        <option>Hairdressing</option>
+        <option>Car washing (inside and out)</option>
+        <option>n/a</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="form-control" type="text" name="skill3" id="skillSelectBox">
+        <option>{{skills.[2]}}</option>
+        <option>Painting and decorating</option>
+        <option>Babysitting</option>
+        <option>Cooking</option>
+        <option>Web development</option>
+        <option>Cleaning</option>
+        <option>Woodwork and general repairs</option>
+        <option>Gardening</option>
+        <option>Ironing</option>
+        <option>Homework help and tutoring</option>
+        <option>Hairdressing</option>
+        <option>Car washing (inside and out)</option>
+        <option>n/a</option>
+      </select>
+    </div>
+  </section>
+  <hr>
+  <section class="current-jobs"></section>
+  <h5>Current Jobs</h5>
+  {{#ifEqual jobs.[0].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[0].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[0].additionalInformation}}</li>
+      <select class="list-group-item form-control" type="text" name="jobstatus1" id="jobstatusSelectBox">
+        <option>{{jobs.[0].jobstatus}}</option>
+        <option>completed</option>
+      </select>
     </div>
   </div>
-  <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Recent Jobs</h3>
-    </div>
-    <div class="panel-body">
-      <div class="list-group">
-        <li class="list-group-item">Job Description: {{selectDescription}}</li>
-        <li class="list-group-item">Additional Information: {{additionalInformation}}</li>
-        <li class="list-group-item">Assigned to: {{skillProviderName}}</li>
-        <li class="list-group-item">Job Owner: {{jobOwnerName}}</li>
-        <li class="list-group-item">Contact Details:<br><br>{{jobOwnerTelephone}}<br><br>{{jobOwnerEmail}}</li>
-        <li class="list-group-item" value="{{currentjobs.jobstatus}}">Job Status: {{jobstatus}}</li>
-        <!--{{#each Job}}-->
-        <!--{{/each}}-->
-      </div>
+  {{/ifEqual}}
+  {{#ifEqual jobs.[1].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[1].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[1].additionalInformation}}</li>
+      <select class="list-group-item form-control" type="text" name="jobstatus2" id="jobstatusSelectBox">
+        <option>{{jobs.[1].jobstatus}}</option>
+        <option>completed</option>
+      </select>
     </div>
   </div>
-  <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Completed Jobs</h3>
-    </div>
-    <div class="panel-body">
-      <div class="list-group">
-        <a href=# class="list-group-item">{{this.jobDescription}}</a>
-        <!--{{#each completedJob}}-->
-        <!--linking to job details page by id
-      {{/each}}-->
-      </div>
+  {{/ifEqual}}
+  {{#ifEqual jobs.[2].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[2].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[2].additionalInformation}}</li>
+      <select class="list-group-item form-control" type="text" name="jobstatus3" id="jobstatusSelectBox">
+        <option>{{jobs.[2].jobstatus}}</option>
+        <option>completed</option>
+      </select>
     </div>
   </div>
-  <hr>
+  {{/ifEqual}}
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <button type="submit" class="btn btn-info navbar-btn">Save changes</a></button>
-     <!-- <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/deletedprofile">Delete
-          profile</a></button>-->
+      </form>
       <form action="/user/{{_id}}/delete" method="post">
-      <button class="btn btn-info navbar-btn">Delete Profile</button>
+        <button class="btn btn-info navbar-btn">Delete Profile</button>
       </form>
     </div>
   </nav>
-</form>
