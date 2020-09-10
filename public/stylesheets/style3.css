@@ -238,8 +238,10 @@
     text-align: center;
     border-radius: 0.5em;
   }
-  
-  
-  
-  
+  #Roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+  #Slabo {
+    font-family: 'Slabo 13px', serif;
+  }
   }

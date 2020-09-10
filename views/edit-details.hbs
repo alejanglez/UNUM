@@ -1,7 +1,8 @@
+<body id="profile">
 <section id="header-image">
   <div class="header">
-    <h1>Unum,<h1>
-        <h2>edit details.</h2>
+    <h1 id="Roboto">Unum,<h1>
+        <h3 id="Slabo">edit details.</h3>
   </div>
 </section>
 {{#if errorMessage}}
@@ -10,7 +11,7 @@
 <hr>
 <form action="/user/{{_id}}/edit" method="post" class="form-edit">
   <section class="user-details">
-    <h5>User Details</h5>
+    <h5 id="Title">User Details</h5>
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" name="name" id="name-input" value="{{name}}">
@@ -30,7 +31,7 @@
   </section>
   <hr>
   <section class="current-skills">
-    <h5>Current Skills</h5>
+    <h5 id="Title">Current Skills</h5>
     <div class="form-group">
       <select class="form-control" type="text" name="skill1" id="skillSelectBox">
         <option>{{skills.[0]}}</option>
@@ -85,13 +86,13 @@
   </section>
   <hr>
   <section class="current-jobs"></section>
-  <h5>Current Jobs</h5>
+  <h5 id="Title">Current Jobs</h5>
   {{#ifEqual jobs.[0].jobstatus "current"}}
   <div class="panel-body">
     <div class="list-group">
       <li class="list-group-item">Job Description: {{jobs.[0].selectDescription}}</li>
       <li class="list-group-item">Additional Information: {{jobs.[0].additionalInformation}}</li>
-      <select class="list-group-item form-control" type="text" name="jobstatus1" id="jobstatusSelectBox">
+      <select class="form-control" type="text" name="jobstatus1" id="jobstatusSelectBox">
         <option>{{jobs.[0].jobstatus}}</option>
         <option>completed</option>
       </select>
@@ -103,7 +104,7 @@
     <div class="list-group">
       <li class="list-group-item">Job Description: {{jobs.[1].selectDescription}}</li>
       <li class="list-group-item">Additional Information: {{jobs.[1].additionalInformation}}</li>
-      <select class="list-group-item form-control" type="text" name="jobstatus2" id="jobstatusSelectBox">
+      <select class="form-control" type="text" name="jobstatus2" id="jobstatusSelectBox">
         <option>{{jobs.[1].jobstatus}}</option>
         <option>completed</option>
       </select>
@@ -115,7 +116,7 @@
     <div class="list-group">
       <li class="list-group-item">Job Description: {{jobs.[2].selectDescription}}</li>
       <li class="list-group-item">Additional Information: {{jobs.[2].additionalInformation}}</li>
-      <select class="list-group-item form-control" type="text" name="jobstatus3" id="jobstatusSelectBox">
+      <select class="form-control" type="text" name="jobstatus3" id="jobstatusSelectBox">
         <option>{{jobs.[2].jobstatus}}</option>
         <option>completed</option>
       </select>
@@ -124,10 +125,11 @@
   {{/ifEqual}}
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
-      <button type="submit" class="btn btn-info navbar-btn">Save changes</a></button>
+      <button type="submit" class="btn btn-lg btn-warning navbar-btn">Save changes</a></button>
       </form>
       <form action="/user/{{_id}}/delete" method="post">
-        <button class="btn btn-info navbar-btn">Delete Profile</button>
+        <button class="btn btn-lg btn-danger navbar-btn">Delete Profile</button>
       </form>
     </div>
   </nav>
+  </body>

@@ -84,7 +84,8 @@ router.post("/user/:id/edit", (req, res) => {
           console.log(`Error while deleting the profile: ${err}`);
           next();
         });
-    } else if(jobstatus2 === "completed"){
+    };
+    if(jobstatus2 === "completed"){
       const jobId = currentUser.jobs[1]._id;
       console.log(jobId);
       Job.findByIdAndUpdate(
@@ -103,7 +104,8 @@ router.post("/user/:id/edit", (req, res) => {
           console.log(`Error while deleting the profile: ${err}`);
           next();
         });
-    } else if(jobstatus3 === "completed"){
+    };
+    if(jobstatus3 === "completed"){
       const jobId = currentUser.jobs[2]._id;
       console.log(jobId);
       Job.findByIdAndUpdate(
@@ -122,7 +124,7 @@ router.post("/user/:id/edit", (req, res) => {
           console.log(`Error while deleting the profile: ${err}`);
           next();
         });
-    }
+    };
     res.redirect("/profile-user");
   });
 });
