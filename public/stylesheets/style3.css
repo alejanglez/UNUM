@@ -1,8 +1,16 @@
-@media (min-width: 1224px) {
+@media (min-width: 1024px) {
 
   /* splash page*/
   #splash {
     background: url("/images/UNUMbackground.svg") repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #26bbaf;
+    max-width: 100vw;
+  }
+
+  #splash2 {
+    background: url("/images/UNUMbackground2.png") repeat;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #26bbaf;
@@ -34,7 +42,7 @@
   
   .bigcard-header h2 {
     color: white;
-    font-size: 6vw;
+    font-size: 3vw;
   }
   
   
@@ -103,14 +111,14 @@
   .tagline {
     text-align: center;
     font-family: Pacifico;
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     color: white;
   }
   
   .subtagline {
     text-align: center;
     font-family: Pacifico;
-    font-size: 2vw;
+    font-size: 1vw;
     color: white;
   }
   
