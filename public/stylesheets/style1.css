@@ -8,6 +8,17 @@
   background-color: #26bbaf;
   max-width: 100vw;
 }
+#profile {
+  background: url("/images/ProfilePage.svg") repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #26bbaf;
+  max-width: 100vw;
+}
+#jobslist {
+  background-color: #26bbaf;
+  max-width: 100vw;
+}
 
 #splash2 {
   background: url("/images/UNUMbackground2.png") repeat;
@@ -60,7 +71,7 @@
 
 .login_btn {
   color: white;
-  background-color: #299088;
+  background-color: #26bbaf;
   max-width: 30vw;
 }
 
@@ -140,6 +151,7 @@ label {
 
 .card {
   background: none;
+  border: #26bbaf 0.5vw solid;
 }
 
 #containerDetail {
@@ -159,7 +171,7 @@ label {
 }
 
 #jobDescription {
-  font-size: 8vw;
+  font-size: 7vw;
   color: #26bbaf;
 }
 
@@ -168,7 +180,7 @@ label {
 }
 
 #jobOwner {
-  font-size: 6vw;
+  font-size: 2vw;
   color: #26bbaf;
 }
 
@@ -186,6 +198,7 @@ label {
 
 .jumbotron {
   opacity: 0.9;
+  margin-top: 2vh;
 }
 
 .logo {
@@ -197,20 +210,22 @@ label {
   background: rgb(171, 171, 171, 0.9);
   border-radius: 10px;
   padding: 1vw;
+  margin-top: 2vh;
+  border: #26bbaf 0.5vw solid;
 }
 
 .header h1{
   color: white;
-  margin-left: 7vw;
+  margin-left: 18vw;
   font-style: italic;
-  font-size: 10vw; 
+  font-size: 15vw; 
 }
 
-.header h2{
+.header h3{
   color: black;
   text-align: right;
   margin-right: 7vw;
-  font-size: 9vw; 
+  font-size: 6vw; 
 }
 
 .form-group {
@@ -241,8 +256,29 @@ label {
   text-align: center;
   border-radius: 0.5em;
 }
-
-
-
+#Roboto {
+  font-family: 'Roboto', sans-serif;
+}
+#Slabo {
+  font-family: 'Slabo 13px', serif;
+}
+.panel-info {
+  background-color: #26bbaf;
+  border-radius: 0.5em;
+  padding: 1%;
+}
+#Title {
+  background-color: #010133;
+  color: white;
+  padding: 0.5vw;
+  border: #26bbaf solid 0.5vw;
+  border-radius: 0.5em;
+}
+#delete {
+  color: red;
+}
+.list-group {
+  border: #26bbaf solid 1vw;
+}
 
 }

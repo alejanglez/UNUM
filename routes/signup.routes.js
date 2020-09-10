@@ -121,7 +121,8 @@ router.post("/signup", (req, res, next) => {
             res.redirect("/auth/login");
           });
         })
-      } else {
+      };
+      if(jobowner) {
           switch (jobDescription) {
             case "Painting and decorating":
               icon = "images/icons/paintinganddecorating1.png";

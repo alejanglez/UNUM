@@ -1,6 +1,21 @@
-<section>
-  <img class="logo" id="unum-logo" src='/images/UNUM - logo.png'>
-</section>
-<h1 class='tagline'>Your profile has been successfully deleted.</h1>
-<form action="/auth/login" method="GET"><button type="submit">Log-in</button></form>
-<form action="/auth/signup" method="GET"><button type='submit'>Sign-up</button></form>
+<body id="splash">
+  <div>
+    <div class="container">
+	    <div class="d-flex justify-content-center h-100">
+		    <div class="bigcard">
+			    <div class="bigcard-header">
+				    <img class="logo" src="/images/UNUM - logo.png">
+            <h1 class="tagline"><span id="delete">Your profile has been successfully deleted.</span></h1>
+			    </div>
+          <div class="bigcard-body">
+            <form action="/auth/login" method="GET"><button type="submit" class="btn float-right login_btn">Log-in</button></form>
+            <form action="/auth/signup" method="GET"><button type='submit' class="btn float-left login_btn" >Sign-up</button></form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+
+
+
