@@ -1,16 +1,59 @@
-/* login page*/
+@media (min-width: 320px) {
 
-.transbox {
-  background-color: #ffffff;
-  opacity: 0.6;
-}
-
+/* splash page*/
 #splash {
   background: url("/images/UNUMbackground.svg") repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #26bbaf;
   max-width: 100vw;
+}
+
+.bigcard {
+  height: 150vw;
+  margin-top: 40%;
+  margin-bottom: 20%;
+  width: 80vw;
+  background-color: #010133 !important;
+  opacity: 0.9;
+  border-radius: 0.5em;
+  padding: 1%;
+}
+
+.bigcard-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bigcard-header h1 {
+  color: white;
+  font-size: 8vw;
+}
+
+.bigcard-header h2 {
+  color: white;
+  font-size: 6vw;
+}
+
+
+.logo {
+  max-width: 70vw;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.bigcard-body {
+  margin-top: 20vw;
+  display:flex;
+  justify-content: space-around;
+}
+
+.login_btn {
+  color: white;
+  background-color: #299088;
+  max-width: 30vw;
 }
 
 #signup {
@@ -25,20 +68,6 @@
   align-content: center;
 }
 
-.card {
-  height: 75%;
-  margin-top: 15%;
-  margin-bottom: auto;
-  width: 40%;
-  background-color: #010133 !important;
-  opacity: 0.9;
-  border-radius: 0.5em;
-  padding: 1%;
-}
-
-.card-header h1 {
-  color: white;
-}
 
 .input-group-prepend span {
   width: 50px;
@@ -52,11 +81,6 @@ input:focus {
   box-shadow: 0 0 0 0 !important;
 }
 
-.login_btn {
-  color: white;
-  background-color: #299088;
-  width: 7em;
-}
 
 .login_btn:hover {
   color: white;
@@ -127,21 +151,29 @@ label {
 }
 
 #jobDescription {
-  font-size: 5vw;
+  font-size: 8vw;
   color: #26bbaf;
 }
 
 #additionalInformation {
-  font-size: 4vw;
+  font-size: 6vw;
 }
 
 #jobOwner {
-  font-size: 1, 5vw;
+  font-size: 6vw;
   color: #26bbaf;
 }
 
 #jobStatus {
   color: red;
+}
+
+#jobid {
+  font-size: 4vw;
+}
+
+.videolink{
+  font-size: 5vw;
 }
 
 .jumbotron {
@@ -163,14 +195,14 @@ label {
   color: white;
   margin-left: 7vw;
   font-style: italic;
-  font-size: 6vw; 
+  font-size: 10vw; 
 }
 
 .header h2{
   color: black;
   text-align: right;
   margin-right: 7vw;
-  font-size: 5vw; 
+  font-size: 9vw; 
 }
 
 .form-group {
@@ -200,4 +232,9 @@ label {
   margin-bottom: 1%;
   text-align: center;
   border-radius: 0.5em;
+}
+
+
+
+
 }
