@@ -1,30 +1,35 @@
 <body id="splash2">
-<div class="containerDetail">
-  {{#if errorMessage}}
-  <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
-  {{/if}}
-  <div class="jumbotron">
-    <h1 id="jobDescription">{{selectDescription}}</h1>
-    <h3 id="jobid">{{jobid}}</h3>
-    <p></p>
-    <h2 id="additionalInformation">{{additionalInformation}}</p>
-      <hr>
-      <h6 id="jobOwner">Job Owner</h5>
-        <p>Name: {{name}}</p>
-        <p></p>
-        <p>Address: {{address}}</p>
-        <p></p>
-        <p><i>The job owner's contact details will be shared with you if you accept this job.</i></p>
+  <div class="containerDetail">
+    {{#if errorMessage}}
+    <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
+    {{/if}}
+    <div class="jumbotron">
+      <h1 id="jobDescription">{{selectDescription}}</h1>
+      <h3 id="jobid">{{jobid}}</h3>
+      <p></p>
+      <h2 id="additionalInformation">{{additionalInformation}}</h2>
         <hr>
-        <h6 id="jobOwner">Job Status <span id="jobStatus">{{jobstatus}}</span></p>
-        <div>
-        <a href= "" target="popup" onclick= "window.open('https://res.cloudinary.com/dylut4r4t/video/upload/v1599471401/UNUM/Unum_OperatingRules_pwiyem.mp4','popup','width=600,height=600'); return false;">
-        <p class="videolink"> Watch UNUM Operating Rules</p>
-        </a>
-        </div>
+        <h6 id="jobOwner">Job Owner</h6>
+          <p>Name: {{name}}</p>
+          <p></p>
+          <p>Address: {{address}}</p>
+          <p></p>
+          <p><i>The job owner's contact details will be shared with you if you accept this job.</i></p>
+          <hr>
+          <h6 id="jobOwner">Job Status <span id="jobStatus">{{jobstatus}}</span></h6>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item"
+                src="https://res.cloudinary.com/dylut4r4t/video/upload/v1599471401/UNUM/Unum_OperatingRules_pwiyem.mp4"></iframe>
+            </div>
+            <div>
+              <a href="" target="popup"
+                onclick="window.open('https://res.cloudinary.com/dylut4r4t/video/upload/v1599471401/UNUM/Unum_OperatingRules_pwiyem.mp4','popup','width=600,height=600'); return false;">
+                <p class="videolink"> Full Screen</p>
+              </a>
+            </div>
 
-          <p><a class="btn btn-warning btn-lg" href="/acceptjob/{{jobid}}" role="button">Accept Job</a></p>
-          <p><a class="btn btn-secondary" href="/jobslist" role="button">Back</a></p>
+            <p><a class="btn btn-warning btn-lg" href="/acceptjob/{{jobid}}" role="button">Accept Job</a></p>
+            <p><a class="btn btn-secondary" href="/jobslist" role="button">Back</a></p>
+    </div>
   </div>
-</div>
 </body>

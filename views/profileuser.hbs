@@ -1,72 +1,70 @@
 <body id="splash2">
-<section>
-  <div class="header">
-    <h1 id="Roboto">Unum,<h1>
-        <h3 id="Slabo">home.</h3>
-  </div>
-</section>
-{{#if errorMessage}}
-<p class="alert alert-primary" role="alert">{{errorMessage}}</p>
-{{/if}}
-<hr>
-<form>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">User Details</h3>
+  <section>
+    <div class="header">
+      <h1>Unum,<h1>
+          <h3>home.</h3>
     </div>
-    <div class="panel-body">
-      <div class="list-group">
-        <li class="list-group-item">Name: {{name}}</li>
-        <li class="list-group-item">Email address: {{email}}</li>
-        <li class="list-group-item">Telephone: {{telephone}}</li>
-        <li class="list-group-item">Address: {{address}}</li>
+  </section>
+  {{#if errorMessage}}
+  <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
+  {{/if}}
+  <hr>
+  <form>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panel-title">User Details</h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <li class="list-group-item">Name: {{name}}</li>
+          <li class="list-group-item">Email address: {{email}}</li>
+          <li class="list-group-item">Telephone: {{telephone}}</li>
+          <li class="list-group-item">Address: {{address}}</li>
+        </div>
       </div>
     </div>
-  </div>
-  <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Current Skills</h3>
-    </div>
-    <div class="panel-body">
-      <div class="list-group">
-        {{#each skills}}
-        <li class="list-group-item">{{this}}</li>
-        {{/each}}
+    <hr>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panel-title">Current Skills</h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          {{#each skills}}
+          <li class="list-group-item">{{this}}</li>
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
-  <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Current Jobs</h5>
+    <hr>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panel-title">Current Jobs</h5>
+      </div>
+      {{> recentJobs this}}
     </div>
-    {{> recentJobs this}}
-  </div>
-  <hr>
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <h5 class="panel-title">Completed Jobs</h5>
-    </div>
-    <div class="panel-body">
-      <div class="list-group">
-        <ul>
-          {{> completedJobs this}}
-        </ul>
+    <hr>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panel-title">Completed Jobs</h5>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <ul>
+            {{> completedJobs this}}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</form>
-<hr>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
+  </form>
+  <hr>
+  <button type="button" class="btn btn-warning btn-lge"><a class="nav-bar-link" href="/createjob">CreateJob</a></button>
+  <div class="buttoncontainer">
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/jobslist">Jobs</a></button>
-    <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/createjob">Create
-        Job</a></button>
     <button type="button" class="btn btn-info navbar-btn"><a class="nav-bar-link" href="/edit">Edit details</a></button>
     <form id="logout-form" action="/logout" method="POST">
       <button type="submit" class="btn btn-info navbar-btn">Logout</button>
     </form>
   </div>
-</nav>
+
 </body>

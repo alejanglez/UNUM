@@ -205,13 +205,15 @@
   }
   
   .header h1{
+    font-family: 'Roboto', sans-serif;
     color: white;
     margin-left: 7vw;
     font-style: italic;
     font-size: 6vw; 
   }
   
-  .header h2{
+  .header h3{
+    font-family: 'Slabo 13px', serif;
     color: black;
     text-align: right;
     margin-right: 7vw;
@@ -245,11 +247,5 @@
     margin-bottom: 1%;
     text-align: center;
     border-radius: 0.5em;
-  }
-  #Roboto {
-    font-family: 'Roboto', sans-serif;
-  }
-  #Slabo {
-    font-family: 'Slabo 13px', serif;
   }
   }

@@ -59,6 +59,9 @@ app.use("/", require("./routes/login.routes"));
 app.use("/", require("./routes/user.routes"));
 app.use("/", require("./routes/job.routes"));
 
+//Code for the video
+
+
 
 
 module.exports = app;

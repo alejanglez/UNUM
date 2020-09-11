@@ -1,21 +1,21 @@
 <body id="splash2">
-<section id="header-image">
-  <div class="header">
-    <h1 id="Roboto">Unum,<h1>
-    <h3 id="Slabo">available jobs.</h3>
-  </div>
-  <hr>
-<div class="containerList">
-
-  {{#if errorMessage}}
-  <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
-  {{/if}}
-  <div class="row">
-    {{#each jobsFromDB}}
-    {{> jobcard this}}
-    {{/each}}
-  </div>
-</div>
-
-<p><a class="btn btn-secondary" href="/profile-user" role="button">Back</a></p>
+  <section id="header-image">
+    <div class="header">
+      <h1 id="Roboto">Unum,<h1>
+          <h3 id="Slabo">available jobs.</h3>
+    </div>
+    <hr>
+    <div class="containerList">
+      {{#if errorMessage}}
+      <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
+      {{/if}}
+      <div class="row">
+        {{#each jobsFromDB}}
+        {{> jobcard this}}
+        {{/each}}
+      </div>
+    </div>
+    <div class="backbutton">
+    <p><a class="btn btn-secondary" href="/profile-user" role="button">Back</a></p>
+    </div>/
 </body>
