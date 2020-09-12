@@ -47,6 +47,9 @@ router.post("/user/:id/edit", (req, res) => {
     jobstatus1,
     jobstatus2,
     jobstatus3,
+    jobstatus4,
+    jobstatus5,
+    jobstatus6,
   } = req.body;
   console.log("Profile edit", req.body);
 
@@ -107,6 +110,66 @@ router.post("/user/:id/edit", (req, res) => {
     };
     if(jobstatus3 === "completed"){
       const jobId = currentUser.jobs[2]._id;
+      console.log(jobId);
+      Job.findByIdAndUpdate(
+        jobId,
+        {
+          $set: {
+            jobstatus: "completed",
+          },
+        },
+        {
+          new: true,
+        }
+      )
+        .then((updatedJob) => console.log(updatedJob))
+        .catch((err) => {
+          console.log(`Error while deleting the profile: ${err}`);
+          next();
+        });
+    };
+    if(jobstatus4 === "completed"){
+      const jobId = currentUser.jobs[3]._id;
+      console.log(jobId);
+      Job.findByIdAndUpdate(
+        jobId,
+        {
+          $set: {
+            jobstatus: "completed",
+          },
+        },
+        {
+          new: true,
+        }
+      )
+        .then((updatedJob) => console.log(updatedJob))
+        .catch((err) => {
+          console.log(`Error while deleting the profile: ${err}`);
+          next();
+        });
+    };
+    if(jobstatus5 === "completed"){
+      const jobId = currentUser.jobs[4]._id;
+      console.log(jobId);
+      Job.findByIdAndUpdate(
+        jobId,
+        {
+          $set: {
+            jobstatus: "completed",
+          },
+        },
+        {
+          new: true,
+        }
+      )
+        .then((updatedJob) => console.log(updatedJob))
+        .catch((err) => {
+          console.log(`Error while deleting the profile: ${err}`);
+          next();
+        });
+    };
+    if(jobstatus6 === "completed"){
+      const jobId = currentUser.jobs[5]._id;
       console.log(jobId);
       Job.findByIdAndUpdate(
         jobId,

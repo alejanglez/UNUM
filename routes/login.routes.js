@@ -14,7 +14,9 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 //LOGIN//
-router.get("/auth/login", (req, res, next) => res.render("login"));
+router.get("/auth/login", (req, res, next) => {
+  res.render("login");
+});
 
 router.post("/login", (req, res, next) => {
   console.log("SESSION =====> ", req.session);

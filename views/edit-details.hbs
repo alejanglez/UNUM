@@ -123,6 +123,42 @@
     </div>
   </div>
   {{/ifEqual}}
+  {{#ifEqual jobs.[3].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[3].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[3].additionalInformation}}</li>
+      <select class="form-control" type="text" name="jobstatus4" id="jobstatusSelectBox">
+        <option>{{jobs.[3].jobstatus}}</option>
+        <option>completed</option>
+      </select>
+    </div>
+  </div>
+  {{/ifEqual}}
+  {{#ifEqual jobs.[4].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[4].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[4].additionalInformation}}</li>
+      <select class="form-control" type="text" name="jobstatus5" id="jobstatusSelectBox">
+        <option>{{jobs.[4].jobstatus}}</option>
+        <option>completed</option>
+      </select>
+    </div>
+  </div>
+  {{/ifEqual}}
+  {{#ifEqual jobs.[5].jobstatus "current"}}
+  <div class="panel-body">
+    <div class="list-group">
+      <li class="list-group-item">Job Description: {{jobs.[5].selectDescription}}</li>
+      <li class="list-group-item">Additional Information: {{jobs.[5].additionalInformation}}</li>
+      <select class="form-control" type="text" name="jobstatus6" id="jobstatusSelectBox">
+        <option>{{jobs.[5].jobstatus}}</option>
+        <option>completed</option>
+      </select>
+    </div>
+  </div>
+  {{/ifEqual}}
   
     <div class="buttoncontainer">
       <button type="submit" class="btn btn-lg btn-warning navbar-btn">Save changes</a></button>
