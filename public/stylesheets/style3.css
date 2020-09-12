@@ -278,6 +278,10 @@
     border-radius: 0.5em;
   }
 
+  .list-group {
+    border-radius: 0.8em;
+  }
+
   .panel-info {
     background-color: #26bbaf;
     border-radius: 0.5em;
@@ -299,6 +303,18 @@
 
   .list-group {
     border: #26bbaf solid 1vw;
+  }
+
+  .buttoncontainer button {
+    width: 8vw;
+    height: 3vw;
+    border-radius: 0.5em;
+  }
+
+  .btn-secondary {
+    width: 6vw;
+    height: 3vw;
+    border-radius: 0.5em;
   }
 
   }

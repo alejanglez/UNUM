@@ -228,7 +228,7 @@
     border-radius: 10px;
     padding: 1vw;
     margin-top: 2vh;
-    border: #26bbaf 0.5vw solid;
+    border: #26bbaf 0.9vw solid;
   }
 
   .header h1 {
@@ -278,6 +278,10 @@
     border-radius: 0.5em;
   }
 
+  .list-group {
+    border-radius: 0.8em;
+  }
+
   .panel-info {
     background-color: #26bbaf;
     border-radius: 0.5em;
@@ -299,6 +303,18 @@
 
   .list-group {
     border: #26bbaf solid 1vw;
+  }
+
+  .buttoncontainer button {
+    width: 13vw;
+    height: 6vw;
+    border-radius: 0.5em;
+  }
+
+  .btn-secondary {
+    width: 10vw;
+    height: 6vw;
+    border-radius: 0.5em;
   }
 
 }

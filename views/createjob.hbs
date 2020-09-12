@@ -1,41 +1,41 @@
 <body id="splash2">
-  <section id="header-image">
-    <div class="header">
-      <h1 id="Roboto">Unum,<h1>
-          <h3 id="Slabo">create new job.</h3>
+<section id="header-image">
+  <div class="header">
+    <h1 id="Roboto">Unum,<h1>
+    <h3 id="Slabo">create new job.</h3>
+  </div>
+</section>
+{{#if errorMessage}}
+      <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
+    {{/if}}
+  <hr>
+<form action="/createjob" method="POST" class="form-signup">
+<section id="job-owner-signup">
+    <div class="form-group">
+      <label for="jobSelect">Please select a description</label>
+      <select class="form-control" type="text" name="jobDescription" id="skillSelectBox">
+        <option>Job description</option>
+        <option>Painting and decorating</option>
+        <option>Babysitting</option>
+        <option>Cooking</option>
+        <option>Web development</option>
+        <option>Cleaning</option>
+        <option>Woodwork and general repairs</option>
+        <option>Gardening</option>
+        <option>Ironing</option>
+        <option>Homework help and tutoring</option>
+        <option>Hairdressing</option>
+        <option>Car washing (inside and out)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="additionalInfoJob">Additional Information</label>
+      <textarea class="form-control" type="text" name="additionalInfoJob" id="additionalInfoJob" rows="8"></textarea>
     </div>
   </section>
-  {{#if errorMessage}}
-  <p class="alert alert-primary" role="alert">{{errorMessage}}</p>
-  {{/if}}
-  <hr>
-  <form action="/createjob" method="POST" class="form-signup">
-    <section id="job-owner-signup">
-      <div class="form-group">
-        <label for="jobSelect">Please select a description</label>
-        <select class="form-control" type="text" name="jobDescription" id="skillSelectBox">
-          <option>Job description</option>
-          <option>Painting and decorating</option>
-          <option>Babysitting</option>
-          <option>Cooking</option>
-          <option>Web development</option>
-          <option>Cleaning</option>
-          <option>Woodwork and general repairs</option>
-          <option>Gardening</option>
-          <option>Ironing</option>
-          <option>Homework help and tutoring</option>
-          <option>Hairdressing</option>
-          <option>Car washing (inside and out)</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="additionalInfoJob">Additional Information</label>
-        <textarea class="form-control" type="text" name="additionalInfoJob" id="additionalInfoJob" rows="8"></textarea>
-      </div>
-    </section>
-    <div class="buttoncontainer">
-      <button type="submit" class="btn btn-warning btn-lge">Submit</button>
-      <p><a class="btn btn-secondary" href="/profile-user" role="button">Back</a></p>
-    </div>
-  </form>
+  <div class="buttoncontainer">
+    <button type="submit" class="btn btn-warning btn-lge">Submit</button>
+    <p><a class="btn btn-secondary" href="/profile-user" role="button">Back</a></p>
+  </div>
+</form>
 </body>
